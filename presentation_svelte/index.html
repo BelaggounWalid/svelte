@@ -21,8 +21,8 @@
         .nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;justify-content:space-between;align-items:center;padding:14px 40px;background:rgba(10,10,26,0.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
         .nav-logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px}
         .nav-logo svg{width:26px;height:26px}
-        .nav-links{display:flex;gap:6px}
-        .nav-links a{color:var(--txt2);text-decoration:none;font-size:12px;padding:5px 12px;border-radius:20px;transition:all .3s;font-weight:500}
+        .nav-links{display:flex;gap:4px;flex-wrap:wrap}
+        .nav-links a{color:var(--txt2);text-decoration:none;font-size:11px;padding:4px 10px;border-radius:20px;transition:all .3s;font-weight:500}
         .nav-links a:hover,.nav-links a.active{color:var(--orange);background:rgba(255,62,0,0.1)}
         .slide-counter{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--txt2);background:var(--glass);padding:5px 12px;border-radius:20px;border:1px solid var(--border)}
 
@@ -57,7 +57,7 @@
         .hero-title{font-family:'Space Grotesk',sans-serif;font-size:clamp(50px,9vw,110px);font-weight:800;line-height:1;margin-bottom:24px;animation:fadeUp .8s ease-out .2s both;letter-spacing:-2px}
         .grad{background:linear-gradient(135deg,var(--orange),#ff8a50,#ffab76,var(--orange));background-size:300% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 4s linear infinite;filter:drop-shadow(0 0 40px rgba(255,62,0,0.3))}
         @keyframes shimmer{0%{background-position:0% center}100%{background-position:300% center}}
-        .hero-sub{font-size:clamp(16px,2.5vw,20px);color:var(--txt2);max-width:560px;margin:0 auto 0;line-height:1.7;font-weight:300;animation:fadeUp .8s ease-out .4s both}
+        .hero-sub{font-size:clamp(16px,2.5vw,20px);color:var(--txt2);max-width:560px;margin:0 auto;line-height:1.7;font-weight:300;animation:fadeUp .8s ease-out .4s both}
         .hero-scroll{margin-top:50px;animation:fadeUp .8s ease-out .6s both}
         .scroll-indicator{display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--txt2);font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;cursor:pointer;text-decoration:none;transition:color .3s}
         .scroll-indicator:hover{color:var(--orange)}
@@ -70,7 +70,7 @@
         .stat-num{font-family:'Space Grotesk';font-size:36px;font-weight:800;color:var(--orange);line-height:1}
         .stat-lbl{font-size:11px;color:var(--txt2);margin-top:6px;letter-spacing:0.5px}
 
-        /* PLAN TIMELINE HORIZONTAL */
+        /* PLAN TIMELINE */
         #plan{min-height:100vh;text-align:center;background:radial-gradient(ellipse at 30% 50%,rgba(255,62,0,0.04) 0%,transparent 60%);cursor:pointer;user-select:none}
         .plan-timeline{position:relative;max-width:1100px;width:100%;margin:50px auto 0;display:flex;align-items:flex-start;justify-content:center;padding:0 20px}
         .plan-track{position:absolute;top:22px;left:40px;right:40px;height:2px;background:var(--border)}
@@ -87,14 +87,13 @@
         .plan-dot{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--bg);border:2px solid var(--border);flex-shrink:0;z-index:1;transition:all .5s cubic-bezier(.23,1,.32,1);color:var(--orange)}
         .plan-dot svg{width:20px;height:20px;stroke:var(--txt2);transition:all .5s}
         .plan-content{padding:8px 4px 0;text-align:center;transition:all .4s}
-        .plan-content h3{font-size:12px;font-weight:700;margin-bottom:2px;transition:color .4s;white-space:nowrap}
-        .plan-content p{font-size:10px;color:var(--txt2);line-height:1.4;display:none}
+        .plan-content h3{font-size:11px;font-weight:700;margin-bottom:2px;transition:color .4s;white-space:nowrap}
+        .plan-content p{font-size:9px;color:var(--txt2);line-height:1.4;display:none}
         .plan-item.plan-active .plan-content p{display:block}
         .plan-hint{margin-top:40px;font-size:12px;color:var(--txt2);animation:fadeUp .8s ease-out 1s both;display:flex;align-items:center;gap:8px;justify-content:center}
         .plan-hint .plan-hint-key{display:inline-flex;align-items:center;justify-content:center;padding:3px 10px;border-radius:6px;background:var(--glass);border:1px solid var(--border);font-family:'JetBrains Mono';font-size:11px;color:var(--txt)}
         .plan-hint-arrow{animation:hintPulse 1.5s ease-in-out infinite}
         @keyframes hintPulse{0%,100%{opacity:.4}50%{opacity:1}}
-        @media(max-width:768px){.plan-content h3{font-size:10px}.plan-dot{width:36px;height:36px}.plan-dot svg{width:16px;height:16px}}
 
         /* SECTION COMMON */
         .stag{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--orange);margin-bottom:14px}
@@ -102,24 +101,26 @@
         .stitle{font-family:'Space Grotesk';font-size:clamp(30px,5vw,52px);font-weight:800;line-height:1.1;margin-bottom:16px}
         .sdesc{font-size:17px;color:var(--txt2);max-width:680px;line-height:1.7;font-weight:300;margin-left:auto;margin-right:auto}
 
-        /* WHAT */
+        /* WHAT - FLOW */
         #what .grid{display:flex;flex-direction:column;align-items:center;gap:40px;max-width:1100px;width:100%;text-align:center}
-        .flow{display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:center}
-        .fbox{width:220px;padding:24px;border-radius:18px;background:var(--glass);border:1px solid var(--border);text-align:center;backdrop-filter:blur(10px)}
-        .fbox-t{font-weight:700;font-size:13px;margin-bottom:6px}
+        .flow{display:flex;align-items:center;gap:20px;flex-wrap:wrap;justify-content:center}
+        .fbox{width:200px;padding:22px 16px;border-radius:18px;background:var(--glass);border:1px solid var(--border);text-align:center;backdrop-filter:blur(10px);transition:all .4s}
+        .fbox:hover{transform:translateY(-4px);border-color:rgba(255,62,0,.3)}
+        .fbox-icon{font-size:32px;margin-bottom:10px}
+        .fbox-t{font-weight:700;font-size:14px;margin-bottom:4px}
         .fbox-d{font-size:11px;color:var(--txt2)}
-        .farrow{font-size:32px;color:var(--orange);animation:arrowP 1.5s ease-in-out infinite}
+        .farrow{font-size:28px;color:var(--orange);animation:arrowP 1.5s ease-in-out infinite}
         @keyframes arrowP{0%,100%{transform:translateX(0);opacity:.6}50%{transform:translateX(6px);opacity:1}}
 
-        /* FEATURES */
-        .fgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1100px;width:100%;margin-top:40px}
-        .fcard{padding:32px 26px;border-radius:18px;background:var(--bg2);border:1px solid var(--border);transition:all .4s;position:relative;overflow:hidden}
-        .fcard::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--orange),transparent);opacity:0;transition:opacity .4s}
-        .fcard:hover{transform:translateY(-6px);border-color:rgba(255,62,0,.3)}
-        .fcard:hover::before{opacity:1}
-        .fcard-ico{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:16px;background:rgba(255,62,0,.12)}
-        .fcard h3{font-size:16px;font-weight:700;margin-bottom:8px}
-        .fcard p{font-size:13px;color:var(--txt2);line-height:1.6}
+        /* NO-VDOM DIAGRAM */
+        .vdom-compare{display:grid;grid-template-columns:1fr 1fr;gap:32px;max-width:900px;width:100%;margin-top:40px}
+        .vdom-side{padding:32px;border-radius:18px;background:var(--bg2);border:1px solid var(--border);text-align:center}
+        .vdom-side h3{font-size:18px;font-weight:700;margin-bottom:20px;display:flex;align-items:center;gap:10px;justify-content:center}
+        .vdom-step{padding:12px 16px;border-radius:10px;background:var(--glass);margin-bottom:10px;font-size:13px;font-weight:500;border:1px solid var(--border);transition:all .3s}
+        .vdom-arrow{color:var(--txt2);font-size:18px;margin:4px 0}
+        .vdom-side.svelte-side{border-color:rgba(255,62,0,.3)}
+        .vdom-side.svelte-side .vdom-step{border-color:rgba(255,62,0,.2);background:rgba(255,62,0,.05)}
+        .vdom-badge{display:inline-block;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:600;margin-top:12px}
 
         /* CODE BLOCKS */
         .code-block{border-radius:14px;overflow:hidden;border:1px solid var(--border);background:#1a1a2e}
@@ -133,6 +134,7 @@
         .code-tag{font-size:10px;font-weight:600;padding:2px 8px;border-radius:5px;letter-spacing:.5px}
         .tag-s{background:rgba(255,62,0,.2);color:var(--orange)}
         .tag-r{background:rgba(97,218,251,.2);color:#61dafb}
+        .tag-v{background:rgba(66,184,131,.2);color:#42b883}
         .code-body{padding:18px;font-family:'JetBrains Mono',monospace;font-size:12.5px;line-height:1.8;overflow-x:auto}
         .code-body pre{white-space:pre}
         .kw{color:#c792ea}.fn{color:#82aaff}.str{color:#c3e88d}.tg{color:#f07178}
@@ -152,15 +154,43 @@
         .pbar-fill.a{background:linear-gradient(90deg,#8b1a2b,#dd1b16)}
         .fdot{width:9px;height:9px;border-radius:50%;display:inline-block}
 
-        /* SVELTEKIT */
-        .kit-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:960px;width:100%;margin-top:40px}
-        .kcard{padding:28px;border-radius:16px;background:var(--bg2);border:1px solid var(--border);transition:all .3s}
-        .kcard:hover{border-color:rgba(255,62,0,.3);transform:translateY(-4px)}
-        .kcard-ico{font-size:28px;margin-bottom:14px}
-        .kcard h3{font-size:16px;font-weight:700;margin-bottom:6px}
-        .kcard p{font-size:13px;color:var(--txt2);line-height:1.6}
+        /* COMPARISON TABLE */
+        .comp-table{width:100%;max-width:1000px;border-collapse:separate;border-spacing:0;margin-top:40px;border-radius:16px;overflow:hidden;border:1px solid var(--border)}
+        .comp-table th{padding:16px 20px;font-size:14px;font-weight:700;text-align:center;background:var(--bg2);border-bottom:1px solid var(--border)}
+        .comp-table th:first-child{text-align:left;width:200px}
+        .comp-table td{padding:14px 20px;font-size:13px;text-align:center;border-bottom:1px solid rgba(255,255,255,.04);transition:background .3s}
+        .comp-table td:first-child{text-align:left;font-weight:600;color:var(--txt2)}
+        .comp-table tr:hover td{background:rgba(255,255,255,.02)}
+        .comp-table tr:last-child td{border-bottom:none}
+        .comp-highlight{color:var(--orange);font-weight:600}
 
-        /* ============ TUTORIAL ============ */
+        /* FORCES & LIMITES */
+        .fl-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;max-width:960px;width:100%;margin-top:40px}
+        .fl-card{padding:32px;border-radius:18px;background:var(--bg2);border:1px solid var(--border)}
+        .fl-card h3{font-size:20px;font-weight:700;margin-bottom:20px;display:flex;align-items:center;gap:10px}
+        .fl-item{display:flex;align-items:flex-start;gap:12px;margin-bottom:14px;font-size:14px;line-height:1.6}
+        .fl-icon{flex-shrink:0;width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px}
+        .fl-icon.pro{background:rgba(105,240,174,.12)}
+        .fl-icon.con{background:rgba(255,82,82,.12)}
+
+        /* COURS GRID */
+        .cours-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:1000px;width:100%;margin-top:40px}
+        .cours-card{padding:24px;border-radius:16px;background:var(--bg2);border:1px solid var(--border);transition:all .3s;text-align:center}
+        .cours-card:hover{border-color:rgba(255,62,0,.3);transform:translateY(-4px)}
+        .cours-card-icon{font-size:28px;margin-bottom:12px}
+        .cours-card h3{font-size:14px;font-weight:700;margin-bottom:6px;color:var(--orange)}
+        .cours-card .cours-concept{font-size:12px;color:var(--txt2);margin-bottom:8px}
+        .cours-card .cours-svelte{font-size:12px;color:var(--green);font-family:'JetBrains Mono';background:rgba(105,240,174,.08);padding:4px 10px;border-radius:6px;display:inline-block}
+
+        /* IA SECTION */
+        .ia-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:960px;width:100%;margin-top:40px}
+        .ia-card{padding:28px;border-radius:16px;background:var(--bg2);border:1px solid var(--border);transition:all .3s}
+        .ia-card:hover{border-color:rgba(179,136,255,.3);transform:translateY(-4px)}
+        .ia-card-ico{font-size:28px;margin-bottom:14px}
+        .ia-card h3{font-size:16px;font-weight:700;margin-bottom:6px}
+        .ia-card p{font-size:13px;color:var(--txt2);line-height:1.6}
+
+        /* TUTORIAL */
         #tutorial{padding-top:100px}
         .tut-container{max-width:1100px;width:100%;margin-top:40px}
         .tut-steps{display:flex;gap:6px;margin-bottom:30px;flex-wrap:wrap;justify-content:center}
@@ -276,9 +306,13 @@
 
         /* ANIMATIONS */
         @keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
-        .rv{opacity:0;transform:translateY(36px);transition:all .7s ease-out}
+        .rv{opacity:0;transform:translateY(36px);transition:all .7s cubic-bezier(.23,1,.32,1)}
         .rv.vis{opacity:1;transform:translateY(0)}
         .rv1{transition-delay:.1s}.rv2{transition-delay:.2s}.rv3{transition-delay:.3s}.rv4{transition-delay:.4s}.rv5{transition-delay:.5s}
+
+        /* SLIDE TRANSITIONS */
+        .slide{opacity:0;transform:translateY(40px);transition:opacity .8s cubic-bezier(.23,1,.32,1), transform .8s cubic-bezier(.23,1,.32,1)}
+        .slide.slide-visible{opacity:1;transform:translateY(0)}
 
         /* KBD HINT */
         .kbd-hint{position:fixed;bottom:26px;right:26px;z-index:1000;display:flex;gap:6px;align-items:center;font-size:11px;color:var(--txt2)}
@@ -286,12 +320,15 @@
 
         @media(max-width:768px){
             .slide{padding:90px 20px 36px}
-            .fgrid,.kit-grid,.q-opts{grid-template-columns:1fr}
+            .vdom-compare,.fl-grid,.ia-grid,.q-opts{grid-template-columns:1fr}
+            .cours-grid{grid-template-columns:1fr 1fr}
             .co-grid{grid-template-columns:repeat(2,1fr)}
-            #what .grid,.tut-layout{grid-template-columns:1fr}
+            .tut-layout{grid-template-columns:1fr}
             .hero-stats{flex-direction:column;gap:16px}
             .nav-links{display:none}
             .todo-phone{width:100%;max-width:380px}
+            .comp-table{font-size:11px}
+            .comp-table th,.comp-table td{padding:10px 8px}
         }
     </style>
 </head>
@@ -308,82 +345,95 @@
         <a href="#hero" class="active">Accueil</a>
         <a href="#plan">Plan</a>
         <a href="#what">C'est quoi</a>
-        <a href="#features">Features</a>
-        <a href="#perf">Perf</a>
-        <a href="#tutorial">Tutoriel</a>
+        <a href="#no-vdom">No VDOM</a>
+        <a href="#bundle-perf">Perf</a>
+        <a href="#code-compare">Code</a>
+        <a href="#comparison">Comparatif</a>
+        <a href="#forces-limites">Forces</a>
+        <a href="#cours">Cours</a>
+        <a href="#ia">IA</a>
+        <a href="#tutorial">Tuto</a>
         <a href="#livedemo">Demo</a>
-        <a href="#companies">Adoption</a>
         <a href="#quiz">Quiz</a>
     </div>
-    <div class="slide-counter" id="slideCounter">01 / 12</div>
+    <div class="slide-counter" id="slideCounter">01 / 15</div>
 </nav>
 
-<!-- HERO -->
+<!-- ==================== 1. HERO ==================== -->
 <section class="slide" id="hero">
     <div class="hero-glow"></div>
     <div class="hero-glow2"></div>
-    <div class="hero-orb"></div>
-    <div class="hero-orb"></div>
-    <div class="hero-orb"></div>
-    <div class="hero-orb"></div>
-    <div class="hero-orb"></div>
+    <div class="hero-orb"></div><div class="hero-orb"></div><div class="hero-orb"></div><div class="hero-orb"></div><div class="hero-orb"></div>
     <div class="hero-content">
-        <div class="badge"><span class="dot"></span> Framework Frontend Nouvelle Génération</div>
-        <h1 class="hero-title">Découvrez<br><span class="grad">Svelte</span></h1>
-        <p class="hero-sub">Le framework qui disparaît. Moins de code, plus de performance, une expérience développeur inégalée.</p>
+        <div class="badge"><span class="dot"></span> Framework Frontend Nouvelle Generation</div>
+        <h1 class="hero-title">Decouvrez<br><span class="grad">Svelte</span></h1>
+        <p class="hero-sub">Le framework qui disparait. Moins de code, plus de performance, une experience developpeur inegalee.</p>
         <div class="hero-stats">
             <div class="stat"><div class="stat-num" data-count="40">0</div><div class="stat-lbl">% de code en moins</div></div>
-            <div class="stat"><div class="stat-num" data-count="10">0</div><div class="stat-lbl">× plus rapide</div></div>
+            <div class="stat"><div class="stat-num" data-count="10">0</div><div class="stat-lbl">x plus rapide</div></div>
             <div class="stat"><div class="stat-num" data-count="0">0</div><div class="stat-lbl">KB de runtime</div></div>
         </div>
         <div class="hero-scroll">
-            <a href="#plan" class="scroll-indicator">
-                Explorer
-                <div class="scroll-line"></div>
-            </a>
+            <a href="#plan" class="scroll-indicator">Explorer<div class="scroll-line"></div></a>
         </div>
     </div>
 </section>
 
-<!-- PLAN -->
+<!-- ==================== 2. PLAN ==================== -->
 <section class="slide" id="plan">
     <div style="text-align:center;position:relative;z-index:2">
         <div class="stag" style="animation:fadeUp .8s ease-out both">Sommaire</div>
-        <h2 class="stitle" style="animation:fadeUp .8s ease-out .15s both">Plan de la <span class="grad">présentation</span></h2>
+        <h2 class="stitle" style="animation:fadeUp .8s ease-out .15s both">Plan de la <span class="grad">presentation</span></h2>
     </div>
     <div class="plan-timeline" id="planGrid">
         <div class="plan-track"><div class="plan-track-fill" id="planTrackFill"></div></div>
         <div class="plan-item" data-href="#what">
             <div class="plan-dot"><i data-lucide="search"></i></div>
-            <div class="plan-content"><h3>C'est quoi ?</h3><p>Introduction au compilateur</p></div>
+            <div class="plan-content"><h3>C'est quoi ?</h3><p>Introduction</p></div>
         </div>
-        <div class="plan-item" data-href="#features">
-            <div class="plan-dot"><i data-lucide="zap"></i></div>
-            <div class="plan-content"><h3>Features</h3><p>Réactivité, composants, stores</p></div>
+        <div class="plan-item" data-href="#no-vdom">
+            <div class="plan-dot"><i data-lucide="zap-off"></i></div>
+            <div class="plan-content"><h3>No VDOM</h3><p>Compilation</p></div>
         </div>
-        <div class="plan-item" data-href="#perf">
+        <div class="plan-item" data-href="#bundle-perf">
             <div class="plan-dot"><i data-lucide="bar-chart-3"></i></div>
-            <div class="plan-content"><h3>Performances</h3><p>Benchmarks & comparaisons</p></div>
+            <div class="plan-content"><h3>Performance</h3><p>Bundle & bench</p></div>
         </div>
-        <div class="plan-item" data-href="#sveltekit">
-            <div class="plan-dot"><i data-lucide="box"></i></div>
-            <div class="plan-content"><h3>SvelteKit</h3><p>Framework full-stack</p></div>
+        <div class="plan-item" data-href="#code-compare">
+            <div class="plan-dot"><i data-lucide="code-2"></i></div>
+            <div class="plan-content"><h3>Code</h3><p>Reactivite & DX</p></div>
+        </div>
+        <div class="plan-item" data-href="#comparison">
+            <div class="plan-dot"><i data-lucide="columns-3"></i></div>
+            <div class="plan-content"><h3>Comparatif</h3><p>vs React & Vue</p></div>
+        </div>
+        <div class="plan-item" data-href="#forces-limites">
+            <div class="plan-dot"><i data-lucide="scale"></i></div>
+            <div class="plan-content"><h3>Forces</h3><p>& Limites</p></div>
+        </div>
+        <div class="plan-item" data-href="#cours">
+            <div class="plan-dot"><i data-lucide="graduation-cap"></i></div>
+            <div class="plan-content"><h3>Cours</h3><p>Concepts vus</p></div>
+        </div>
+        <div class="plan-item" data-href="#ia">
+            <div class="plan-dot"><i data-lucide="brain"></i></div>
+            <div class="plan-content"><h3>IA</h3><p>Svelte & l'IA</p></div>
         </div>
         <div class="plan-item" data-href="#tutorial">
             <div class="plan-dot"><i data-lucide="book-open"></i></div>
-            <div class="plan-content"><h3>Tutoriel</h3><p>Apprendre pas à pas</p></div>
+            <div class="plan-content"><h3>Tutoriel</h3><p>Pas a pas</p></div>
         </div>
         <div class="plan-item" data-href="#livedemo">
             <div class="plan-dot"><i data-lucide="play-circle"></i></div>
-            <div class="plan-content"><h3>Démo live</h3><p>Todo app interactive</p></div>
+            <div class="plan-content"><h3>Demo</h3><p>Todo app</p></div>
         </div>
         <div class="plan-item" data-href="#companies">
             <div class="plan-dot"><i data-lucide="building-2"></i></div>
-            <div class="plan-content"><h3>Adoption</h3><p>Qui utilise Svelte ?</p></div>
+            <div class="plan-content"><h3>Adoption</h3><p>En production</p></div>
         </div>
         <div class="plan-item" data-href="#quiz">
-            <div class="plan-dot"><i data-lucide="brain"></i></div>
-            <div class="plan-content"><h3>Quiz</h3><p>Testez vos connaissances</p></div>
+            <div class="plan-dot"><i data-lucide="trophy"></i></div>
+            <div class="plan-content"><h3>Quiz</h3><p>Testez-vous</p></div>
         </div>
     </div>
     <div class="plan-hint">
@@ -391,85 +441,322 @@
     </div>
 </section>
 
-<!-- WHAT -->
+<!-- ==================== 3. C'EST QUOI SVELTE ? ==================== -->
 <section class="slide" id="what">
     <div class="grid">
         <div>
             <div class="stag rv">Introduction</div>
             <h2 class="stitle rv rv1">C'est quoi <span class="grad">Svelte ?</span></h2>
-            <p class="sdesc rv rv2">Svelte est un <strong>compilateur</strong>, pas un framework classique. Il transforme vos composants en code JavaScript impératif ultra-optimisé au moment du <strong>build</strong>. Contrairement à React ou Vue qui utilisent un <strong>Virtual DOM</strong>, Svelte génère du code qui met à jour le DOM chirurgicalement.</p>
-            <p class="sdesc rv rv3" style="margin-top:12px;color:var(--orange);font-weight:500;font-size:15px">Créé par Rich Harris (NY Times) en 2016. Maintenant chez Vercel.</p>
+            <p class="sdesc rv rv2">Svelte est un <strong>compilateur</strong>, pas un framework classique. Il transforme vos composants en code JavaScript imperatif ultra-optimise au moment du <strong>build</strong>. Zero runtime envoye au navigateur.</p>
+            <p class="sdesc rv rv3" style="margin-top:12px;color:var(--orange);font-weight:500;font-size:15px">Cree par Rich Harris (NY Times) en 2016. Maintenant chez Vercel.</p>
         </div>
         <div class="rv rv4">
             <div class="flow">
-                <div class="fbox"><div style="font-size:32px;margin-bottom:8px">📝</div><div class="fbox-t">Code .svelte</div><div class="fbox-d">HTML + CSS + JS</div></div>
+                <div class="fbox">
+                    <div class="fbox-icon">📝</div>
+                    <div class="fbox-t">Code .svelte</div>
+                    <div class="fbox-d">HTML + CSS + JS<br>dans un seul fichier</div>
+                </div>
                 <div class="farrow">→</div>
-                <div class="fbox" style="border-color:rgba(255,62,0,.3)"><div style="font-size:32px;margin-bottom:8px">⚡</div><div class="fbox-t" style="color:var(--orange)">Compilateur</div><div class="fbox-d">Build time</div></div>
+                <div class="fbox" style="border-color:rgba(255,62,0,.3);background:rgba(255,62,0,.06)">
+                    <div class="fbox-icon">⚡</div>
+                    <div class="fbox-t" style="color:var(--orange)">Compilateur Svelte</div>
+                    <div class="fbox-d">Analyse & optimise<br>au build time</div>
+                </div>
                 <div class="farrow">→</div>
-                <div class="fbox"><div style="font-size:32px;margin-bottom:8px">🚀</div><div class="fbox-t">JS Vanilla</div><div class="fbox-d">Pas de runtime !</div></div>
+                <div class="fbox" style="border-color:rgba(105,240,174,.3)">
+                    <div class="fbox-icon">🚀</div>
+                    <div class="fbox-t" style="color:var(--green)">JS Vanilla optimise</div>
+                    <div class="fbox-d">Pas de runtime !<br>DOM direct</div>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- FEATURES -->
-<section class="slide" id="features">
+<!-- ==================== 4. PAS DE VIRTUAL DOM ==================== -->
+<section class="slide" id="no-vdom">
     <div style="text-align:center;margin-bottom:8px">
-        <div class="stag rv">Fonctionnalités</div>
-        <h2 class="stitle rv rv1">Pourquoi choisir Svelte ?</h2>
+        <div class="stag rv">Feature #1</div>
+        <h2 class="stitle rv rv1">Le framework qui <span class="grad">disparait</span></h2>
+        <p class="sdesc rv rv2" style="margin:0 auto">Svelte compile votre code. Au runtime, le framework n'existe plus — il ne s'interpose jamais entre votre code et l'utilisateur.</p>
     </div>
-    <div class="fgrid">
-        <div class="fcard rv rv1"><div class="fcard-ico">🚫</div><h3>Pas de Virtual DOM</h3><p>Mise à jour directe du DOM. Pas de diffing, pas de réconciliation. Chirurgical.</p></div>
-        <div class="fcard rv rv2"><div class="fcard-ico" style="background:rgba(79,195,247,.12)">📦</div><h3>Bundle ultra-léger</h3><p>0 KB de runtime. Bundle jusqu'à 10× plus petit que React.</p></div>
-        <div class="fcard rv rv3"><div class="fcard-ico" style="background:rgba(105,240,174,.12)">✨</div><h3>Réactivité native</h3><p>$state, $derived, $effect — la réactivité intégrée au langage.</p></div>
-        <div class="fcard rv rv3"><div class="fcard-ico" style="background:rgba(179,136,255,.12)">🎨</div><h3>CSS scopé</h3><p>Chaque composant a son propre scope CSS. Zéro conflit.</p></div>
-        <div class="fcard rv rv4"><div class="fcard-ico" style="background:rgba(255,128,171,.12)">💡</div><h3>Moins de boilerplate</h3><p>40% de code en moins. Syntaxe proche du HTML standard.</p></div>
-        <div class="fcard rv rv5"><div class="fcard-ico" style="background:rgba(255,213,79,.12)">⚡</div><h3>Animations natives</h3><p>transition:fade, animate:flip, in:fly — intégré au langage.</p></div>
+    <div class="vdom-compare">
+        <div class="vdom-side rv rv3">
+            <h3><span style="color:#61dafb">⚛️</span> React / Vue (Virtual DOM)</h3>
+            <div class="vdom-step">1. Etat change</div>
+            <div class="vdom-arrow">↓</div>
+            <div class="vdom-step">2. Re-render composant entier</div>
+            <div class="vdom-arrow">↓</div>
+            <div class="vdom-step">3. Creer nouvel arbre VDOM</div>
+            <div class="vdom-arrow">↓</div>
+            <div class="vdom-step">4. Diff ancien vs nouveau</div>
+            <div class="vdom-arrow">↓</div>
+            <div class="vdom-step">5. Patch le vrai DOM</div>
+            <div class="vdom-badge" style="background:rgba(97,218,251,.1);color:#61dafb">Runtime necessaire (~40-65 KB)</div>
+        </div>
+        <div class="vdom-side svelte-side rv rv4">
+            <h3><span style="color:var(--orange)">🔥</span> Svelte (Compilation)</h3>
+            <div class="vdom-step">1. Etat change</div>
+            <div class="vdom-arrow" style="color:var(--orange)">↓</div>
+            <div class="vdom-step" style="border-color:rgba(255,62,0,.4);background:rgba(255,62,0,.1)">2. Met a jour exactement le noeud DOM concerne</div>
+            <div class="vdom-badge" style="background:rgba(255,62,0,.1);color:var(--orange);margin-top:28px">0 KB de runtime — JS vanilla pur</div>
+            <p style="font-size:12px;color:var(--txt2);margin-top:16px;line-height:1.6">Pas de diffing, pas de reconciliation.<br>Le compilateur sait a l'avance quoi mettre a jour.</p>
+        </div>
     </div>
 </section>
 
-<!-- PERF -->
-<section class="slide" id="perf">
+<!-- ==================== 5. BUNDLE & PERFORMANCE ==================== -->
+<section class="slide" id="bundle-perf">
     <div style="text-align:center;margin-bottom:8px">
-        <div class="stag rv">Benchmarks</div>
-        <h2 class="stitle rv rv1">Performance comparée</h2>
+        <div class="stag rv">Feature #2</div>
+        <h2 class="stitle rv rv1">Bundle & <span class="grad">Performance</span></h2>
+        <p class="sdesc rv rv2" style="margin:0 auto">0 KB de runtime = bundle ultra-leger. Moins de JS envoye = chargement plus rapide.</p>
     </div>
     <div class="perf-container">
-        <h3 class="rv" style="margin-bottom:18px;font-size:14px;color:var(--txt2)">Taille du bundle (Hello World) — Plus petit = mieux</h3>
-        <div class="pbar-grp rv rv1"><div class="pbar-lbl"><span class="pbar-name"><span class="fdot" style="background:var(--orange)"></span> Svelte</span><span class="pbar-val" style="color:var(--orange)">2.1 KB</span></div><div class="pbar-track"><div class="pbar-fill s" data-width="5">Svelte</div></div></div>
-        <div class="pbar-grp rv rv2"><div class="pbar-lbl"><span class="pbar-name"><span class="fdot" style="background:#42b883"></span> Vue</span><span class="pbar-val" style="color:#42b883">16 KB</span></div><div class="pbar-track"><div class="pbar-fill v" data-width="35">Vue</div></div></div>
-        <div class="pbar-grp rv rv3"><div class="pbar-lbl"><span class="pbar-name"><span class="fdot" style="background:#61dafb"></span> React</span><span class="pbar-val" style="color:#61dafb">42 KB</span></div><div class="pbar-track"><div class="pbar-fill r" data-width="70">React</div></div></div>
-        <div class="pbar-grp rv rv4"><div class="pbar-lbl"><span class="pbar-name"><span class="fdot" style="background:#dd1b16"></span> Angular</span><span class="pbar-val" style="color:#dd1b16">65 KB</span></div><div class="pbar-track"><div class="pbar-fill a" data-width="100">Angular</div></div></div>
+        <h3 class="rv rv3" style="margin-bottom:18px;font-size:14px;color:var(--txt2)">Taille du bundle (Hello World) — Plus petit = mieux</h3>
+        <div class="pbar-grp rv rv3"><div class="pbar-lbl"><span class="pbar-name"><span class="fdot" style="background:var(--orange)"></span> Svelte</span><span class="pbar-val" style="color:var(--orange)">2.1 KB</span></div><div class="pbar-track"><div class="pbar-fill s" data-width="5">Svelte</div></div></div>
+        <div class="pbar-grp rv rv4"><div class="pbar-lbl"><span class="pbar-name"><span class="fdot" style="background:#42b883"></span> Vue</span><span class="pbar-val" style="color:#42b883">16 KB</span></div><div class="pbar-track"><div class="pbar-fill v" data-width="35">Vue</div></div></div>
+        <div class="pbar-grp rv rv4"><div class="pbar-lbl"><span class="pbar-name"><span class="fdot" style="background:#61dafb"></span> React</span><span class="pbar-val" style="color:#61dafb">42 KB</span></div><div class="pbar-track"><div class="pbar-fill r" data-width="70">React</div></div></div>
+        <div class="pbar-grp rv rv5"><div class="pbar-lbl"><span class="pbar-name"><span class="fdot" style="background:#dd1b16"></span> Angular</span><span class="pbar-val" style="color:#dd1b16">65 KB</span></div><div class="pbar-track"><div class="pbar-fill a" data-width="100">Angular</div></div></div>
+    </div>
+    <div class="rv rv5" style="margin-top:28px;display:flex;gap:24px;justify-content:center;flex-wrap:wrap">
+        <div style="padding:18px 28px;border-radius:14px;background:var(--bg2);border:1px solid var(--border);text-align:center">
+            <div style="font-size:28px;margin-bottom:6px">⚡</div>
+            <div style="font-size:13px;font-weight:600">Time to Interactive</div>
+            <div style="font-size:11px;color:var(--txt2);margin-top:4px">Svelte : ~1.2s vs React : ~3.5s</div>
+        </div>
+        <div style="padding:18px 28px;border-radius:14px;background:var(--bg2);border:1px solid var(--border);text-align:center">
+            <div style="font-size:28px;margin-bottom:6px">📦</div>
+            <div style="font-size:13px;font-weight:600">Transfer Size</div>
+            <div style="font-size:11px;color:var(--txt2);margin-top:4px">Svelte : 2 KB vs React : 42 KB</div>
+        </div>
+        <div style="padding:18px 28px;border-radius:14px;background:var(--bg2);border:1px solid var(--border);text-align:center">
+            <div style="font-size:28px;margin-bottom:6px">🧠</div>
+            <div style="font-size:13px;font-weight:600">Memory Usage</div>
+            <div style="font-size:11px;color:var(--txt2);margin-top:4px">Pas de VDOM en memoire</div>
+        </div>
     </div>
 </section>
 
-<!-- SVELTEKIT -->
-<section class="slide" id="sveltekit">
+<!-- ==================== 6. CODE & REACTIVITE ==================== -->
+<section class="slide" id="code-compare">
     <div style="text-align:center;margin-bottom:8px">
-        <div class="stag rv">Full Stack</div>
-        <h2 class="stitle rv rv1">SvelteKit</h2>
-        <p class="sdesc rv rv2" style="margin:0 auto">Le meta-framework full-stack officiel (comme Next.js pour React)</p>
+        <div class="stag rv">Feature #3</div>
+        <h2 class="stitle rv rv1">Code & <span class="grad">Reactivite</span></h2>
+        <p class="sdesc rv rv2" style="margin:0 auto">Reactivite native, CSS scope, animations integrees, 40% de code en moins.</p>
     </div>
-    <div class="kit-grid">
-        <div class="kcard rv rv1"><div class="kcard-ico">📁</div><h3>Routing fichiers</h3><p>src/routes/about/+page.svelte → /about. Simple.</p></div>
-        <div class="kcard rv rv2"><div class="kcard-ico">🔄</div><h3>SSR + CSR + SSG</h3><p>Stratégie de rendu par page. Serveur, client ou statique.</p></div>
-        <div class="kcard rv rv3"><div class="kcard-ico">📡</div><h3>API intégrée</h3><p>+server.js pour les endpoints. Backend + frontend ensemble.</p></div>
-        <div class="kcard rv rv4"><div class="kcard-ico">🌐</div><h3>Déploiement universel</h3><p>Vercel, Netlify, Cloudflare, Node.js, static...</p></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;max-width:1100px;width:100%;margin-top:32px" class="rv rv3">
+        <!-- SVELTE -->
+        <div class="code-block">
+            <div class="code-head"><div class="code-dots"><span></span><span></span><span></span></div><span class="code-tag tag-s">SVELTE</span><span class="code-fname">Counter.svelte</span></div>
+            <div class="code-body"><pre><span class="tg">&lt;script&gt;</span>
+  <span class="kw">let</span> count <span class="op">=</span> <span class="fn">$state</span>(<span class="nm">0</span>);
+  <span class="kw">let</span> double <span class="op">=</span> <span class="fn">$derived</span>(count <span class="op">*</span> <span class="nm">2</span>);
+<span class="tg">&lt;/script&gt;</span>
+
+<span class="tg">&lt;button</span> <span class="at">onclick</span><span class="op">=</span>{() <span class="op">=&gt;</span> count++}<span class="tg">&gt;</span>
+  {count} (double: {double})
+<span class="tg">&lt;/button&gt;</span>
+
+<span class="tg">&lt;style&gt;</span>
+  <span class="fn">button</span> { <span class="at">color</span>: <span class="nm">red</span> }
+<span class="tg">&lt;/style&gt;</span></pre></div>
+        </div>
+        <!-- REACT -->
+        <div class="code-block">
+            <div class="code-head"><div class="code-dots"><span></span><span></span><span></span></div><span class="code-tag tag-r">REACT</span><span class="code-fname">Counter.jsx</span></div>
+            <div class="code-body"><pre><span class="kw">import</span> {useState, useMemo}
+  <span class="kw">from</span> <span class="str">'react'</span>;
+
+<span class="kw">export default function</span> <span class="fn">Counter</span>() {
+  <span class="kw">const</span> [count, setCount] <span class="op">=</span>
+    <span class="fn">useState</span>(<span class="nm">0</span>);
+  <span class="kw">const</span> double <span class="op">=</span> <span class="fn">useMemo</span>(
+    () <span class="op">=&gt;</span> count <span class="op">*</span> <span class="nm">2</span>, [count]
+  );
+  <span class="kw">return</span> (
+    <span class="tg">&lt;button</span> <span class="at">onClick</span><span class="op">=</span>{() <span class="op">=&gt;</span>
+      <span class="fn">setCount</span>(count + <span class="nm">1</span>)}<span class="tg">&gt;</span>
+      {count} (double: {double})
+    <span class="tg">&lt;/button&gt;</span>
+  );
+}</pre></div>
+        </div>
+        <!-- VUE -->
+        <div class="code-block">
+            <div class="code-head"><div class="code-dots"><span></span><span></span><span></span></div><span class="code-tag tag-v">VUE</span><span class="code-fname">Counter.vue</span></div>
+            <div class="code-body"><pre><span class="tg">&lt;script setup&gt;</span>
+<span class="kw">import</span> { ref, computed }
+  <span class="kw">from</span> <span class="str">'vue'</span>;
+
+<span class="kw">const</span> count <span class="op">=</span> <span class="fn">ref</span>(<span class="nm">0</span>);
+<span class="kw">const</span> double <span class="op">=</span> <span class="fn">computed</span>(
+  () <span class="op">=&gt;</span> count.value <span class="op">*</span> <span class="nm">2</span>
+);
+<span class="tg">&lt;/script&gt;</span>
+
+<span class="tg">&lt;template&gt;</span>
+  <span class="tg">&lt;button</span> <span class="at">@click</span><span class="op">=</span><span class="str">"count++"</span><span class="tg">&gt;</span>
+    {{ count }} ({{ double }})
+  <span class="tg">&lt;/button&gt;</span>
+<span class="tg">&lt;/template&gt;</span></pre></div>
+        </div>
+    </div>
+    <div class="rv rv4" style="display:flex;gap:20px;justify-content:center;margin-top:24px;flex-wrap:wrap">
+        <div style="padding:12px 20px;border-radius:12px;background:rgba(255,62,0,.08);border:1px solid rgba(255,62,0,.2);font-size:13px"><strong style="color:var(--orange)">$state</strong> — etat reactif</div>
+        <div style="padding:12px 20px;border-radius:12px;background:rgba(79,195,247,.08);border:1px solid rgba(79,195,247,.2);font-size:13px"><strong style="color:var(--blue)">$derived</strong> — calcule automatique</div>
+        <div style="padding:12px 20px;border-radius:12px;background:rgba(179,136,255,.08);border:1px solid rgba(179,136,255,.2);font-size:13px"><strong style="color:var(--purple)">CSS scope</strong> — isole par composant</div>
+        <div style="padding:12px 20px;border-radius:12px;background:rgba(105,240,174,.08);border:1px solid rgba(105,240,174,.2);font-size:13px"><strong style="color:var(--green)">transition:</strong> — animations natives</div>
     </div>
 </section>
 
-<!-- ========== TUTORIAL STEP BY STEP ========== -->
+<!-- ==================== 7. TABLEAU COMPARATIF ==================== -->
+<section class="slide" id="comparison">
+    <div style="text-align:center;margin-bottom:8px">
+        <div class="stag rv">Comparaison</div>
+        <h2 class="stitle rv rv1">Svelte vs React vs <span class="grad">Vue</span></h2>
+    </div>
+    <table class="comp-table rv rv2">
+        <thead>
+            <tr>
+                <th>Critere</th>
+                <th style="color:var(--orange)">🔥 Svelte</th>
+                <th style="color:#61dafb">⚛️ React</th>
+                <th style="color:#42b883">💚 Vue</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Paradigme</td><td class="comp-highlight">Compilateur</td><td>Librairie + runtime</td><td>Framework + runtime</td></tr>
+            <tr><td>Virtual DOM</td><td class="comp-highlight">Non (direct DOM)</td><td>Oui</td><td>Oui</td></tr>
+            <tr><td>Bundle (Hello World)</td><td class="comp-highlight">2.1 KB</td><td>42 KB</td><td>16 KB</td></tr>
+            <tr><td>Reactivite</td><td class="comp-highlight">$state / $derived</td><td>useState / useMemo</td><td>ref() / computed()</td></tr>
+            <tr><td>CSS Scope</td><td class="comp-highlight">Natif</td><td>CSS Modules / styled</td><td>scoped attr</td></tr>
+            <tr><td>Animations</td><td class="comp-highlight">Integrees</td><td>framer-motion (30KB)</td><td>Vue Transition</td></tr>
+            <tr><td>Courbe d'apprentissage</td><td class="comp-highlight">Douce</td><td>Moyenne (hooks)</td><td>Douce</td></tr>
+            <tr><td>Ecosysteme / libs</td><td>Plus petit</td><td class="comp-highlight">Enorme</td><td>Grand</td></tr>
+            <tr><td>Offres d'emploi</td><td>Peu</td><td class="comp-highlight">Tres nombreuses</td><td>Nombreuses</td></tr>
+            <tr><td>Communaute GitHub</td><td>~80K stars</td><td class="comp-highlight">~225K stars</td><td>~210K stars</td></tr>
+        </tbody>
+    </table>
+</section>
+
+<!-- ==================== 8. FORCES & LIMITES ==================== -->
+<section class="slide" id="forces-limites">
+    <div style="text-align:center;margin-bottom:8px">
+        <div class="stag rv">Analyse</div>
+        <h2 class="stitle rv rv1">Forces & <span class="grad">Limites</span></h2>
+    </div>
+    <div class="fl-grid">
+        <div class="fl-card rv rv2" style="border-color:rgba(105,240,174,.2)">
+            <h3><span style="color:var(--green)">✅</span> Forces</h3>
+            <div class="fl-item"><div class="fl-icon pro">⚡</div><div><strong>Performance extreme</strong><br><span style="color:var(--txt2);font-size:13px">0 KB runtime, DOM direct, bundle minimal</span></div></div>
+            <div class="fl-item"><div class="fl-icon pro">📝</div><div><strong>DX exceptionnelle</strong><br><span style="color:var(--txt2);font-size:13px">40% moins de code, syntaxe proche du HTML</span></div></div>
+            <div class="fl-item"><div class="fl-icon pro">📦</div><div><strong>Tout inclus</strong><br><span style="color:var(--txt2);font-size:13px">Animations, transitions, CSS scope — natifs</span></div></div>
+            <div class="fl-item"><div class="fl-icon pro">🎓</div><div><strong>Facile a apprendre</strong><br><span style="color:var(--txt2);font-size:13px">Courbe d'apprentissage la plus douce</span></div></div>
+            <div class="fl-item"><div class="fl-icon pro">🔄</div><div><strong>Reactivite fine</strong><br><span style="color:var(--txt2);font-size:13px">Le compilateur sait exactement quoi updater</span></div></div>
+        </div>
+        <div class="fl-card rv rv3" style="border-color:rgba(255,82,82,.2)">
+            <h3><span style="color:#ff5252">⚠️</span> Limites</h3>
+            <div class="fl-item"><div class="fl-icon con">📚</div><div><strong>Ecosysteme plus petit</strong><br><span style="color:var(--txt2);font-size:13px">Moins de libs tierces que React/Vue</span></div></div>
+            <div class="fl-item"><div class="fl-icon con">💼</div><div><strong>Marche de l'emploi</strong><br><span style="color:var(--txt2);font-size:13px">Beaucoup moins d'offres que React</span></div></div>
+            <div class="fl-item"><div class="fl-icon con">👥</div><div><strong>Communaute plus restreinte</strong><br><span style="color:var(--txt2);font-size:13px">Moins de tutos, Stack Overflow, etc.</span></div></div>
+            <div class="fl-item"><div class="fl-icon con">🏗️</div><div><strong>Gros projets</strong><br><span style="color:var(--txt2);font-size:13px">Moins eprouve en entreprise a grande echelle</span></div></div>
+            <div class="fl-item"><div class="fl-icon con">🔀</div><div><strong>Breaking changes</strong><br><span style="color:var(--txt2);font-size:13px">Svelte 5 (Runes) change la syntaxe</span></div></div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== 9. CONCEPTS DU COURS ==================== -->
+<section class="slide" id="cours">
+    <div style="text-align:center;margin-bottom:8px">
+        <div class="stag rv">Lien avec le cours</div>
+        <h2 class="stitle rv rv1">Concepts vus en <span class="grad">cours</span></h2>
+        <p class="sdesc rv rv2" style="margin:0 auto">Ce qu'on a appris et comment Svelte l'implemente</p>
+    </div>
+    <div class="cours-grid">
+        <div class="cours-card rv rv2">
+            <div class="cours-card-icon">🧩</div>
+            <h3>Composants</h3>
+            <div class="cours-concept">Decoupage en briques reutilisables</div>
+            <div class="cours-svelte">Fichier .svelte = 1 composant</div>
+        </div>
+        <div class="cours-card rv rv2">
+            <div class="cours-card-icon">⚡</div>
+            <h3>Reactivite</h3>
+            <div class="cours-concept">Mise a jour automatique de la vue</div>
+            <div class="cours-svelte">$state() / $derived()</div>
+        </div>
+        <div class="cours-card rv rv3">
+            <div class="cours-card-icon">🌳</div>
+            <h3>Manipulation DOM</h3>
+            <div class="cours-concept">Modifier l'arbre HTML dynamiquement</div>
+            <div class="cours-svelte">Le compilateur le fait pour vous</div>
+        </div>
+        <div class="cours-card rv rv3">
+            <div class="cours-card-icon">🔗</div>
+            <h3>Data Binding</h3>
+            <div class="cours-concept">Lier donnees et interface</div>
+            <div class="cours-svelte">bind:value={variable}</div>
+        </div>
+        <div class="cours-card rv rv4">
+            <div class="cours-card-icon">🎯</div>
+            <h3>Evenements</h3>
+            <div class="cours-concept">Gerer les interactions utilisateur</div>
+            <div class="cours-svelte">onclick, onsubmit, onkeydown</div>
+        </div>
+        <div class="cours-card rv rv4">
+            <div class="cours-card-icon">🔄</div>
+            <h3>Cycle de vie</h3>
+            <div class="cours-concept">Mount, update, destroy</div>
+            <div class="cours-svelte">onMount() / $effect()</div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== 10. SVELTE & L'IA ==================== -->
+<section class="slide" id="ia">
+    <div style="text-align:center;margin-bottom:8px">
+        <div class="stag rv">Perspective</div>
+        <h2 class="stitle rv rv1">Svelte a l'ere de <span class="grad">l'IA</span></h2>
+        <p class="sdesc rv rv2" style="margin:0 auto">L'IA ne remplace pas les frameworks — elle les rend encore plus importants.</p>
+    </div>
+    <div class="ia-grid">
+        <div class="ia-card rv rv2">
+            <div class="ia-card-ico">🤖</div>
+            <h3>Interfaces IA legeres</h3>
+            <p>Chatbots, dashboards IA, outils interactifs — Svelte produit des bundles minimaux, ideal pour des UI rapides autour de modeles IA.</p>
+        </div>
+        <div class="ia-card rv rv2">
+            <div class="ia-card-ico">🧠</div>
+            <h3>IA genere du code Svelte</h3>
+            <p>La syntaxe simple de Svelte est plus facile a generer par les LLMs. Moins de boilerplate = moins d'erreurs de generation.</p>
+        </div>
+        <div class="ia-card rv rv3">
+            <div class="ia-card-ico">⚡</div>
+            <h3>Compilation = optimisation auto</h3>
+            <p>Meme du code genere par IA est optimise par le compilateur. Le resultat est toujours performant.</p>
+        </div>
+        <div class="ia-card rv rv3">
+            <div class="ia-card-ico">🚀</div>
+            <h3>Prototypage rapide</h3>
+            <p>Avec l'IA + Svelte, on peut iterer tres vite : moins de code a ecrire, plus de temps pour l'experimentation.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== 11. TUTORIEL ==================== -->
 <section class="slide" id="tutorial">
     <div style="text-align:center;margin-bottom:8px">
         <div class="stag rv">Tutoriel</div>
         <h2 class="stitle rv rv1">Construire une <span class="grad">Todo App</span></h2>
-        <p class="sdesc rv rv2" style="margin:0 auto">Étape par étape — découvrez la puissance de Svelte en pratique</p>
+        <p class="sdesc rv rv2" style="margin:0 auto">Etape par etape — decouvrez la puissance de Svelte en pratique</p>
     </div>
     <div class="tut-container rv rv3">
         <div class="tut-steps" id="tutSteps">
             <button class="tut-step-btn active" onclick="showStep(0)"><span class="tut-step-num">1</span> Structure</button>
-            <button class="tut-step-btn" onclick="showStep(1)"><span class="tut-step-num">2</span> Réactivité</button>
-            <button class="tut-step-btn" onclick="showStep(2)"><span class="tut-step-num">3</span> Événements</button>
+            <button class="tut-step-btn" onclick="showStep(1)"><span class="tut-step-num">2</span> Reactivite</button>
+            <button class="tut-step-btn" onclick="showStep(2)"><span class="tut-step-num">3</span> Evenements</button>
             <button class="tut-step-btn" onclick="showStep(3)"><span class="tut-step-num">4</span> Boucles</button>
             <button class="tut-step-btn" onclick="showStep(4)"><span class="tut-step-num">5</span> Transitions</button>
             <button class="tut-step-btn" onclick="showStep(5)"><span class="tut-step-num">6</span> vs React</button>
@@ -480,26 +767,20 @@
             <div class="tut-layout">
                 <div class="tut-explain">
                     <h3><span>📄</span> Structure d'un composant</h3>
-                    <p>Un fichier <strong>.svelte</strong> combine HTML, CSS et JS dans un seul fichier. C'est comme du HTML natif enrichi.</p>
+                    <p>Un fichier <strong>.svelte</strong> combine HTML, CSS et JS dans un seul fichier.</p>
                     <p>Pas d'import React, pas de JSX, pas de return(). Juste du code <strong>naturel</strong>.</p>
-                    <div class="tut-highlight">Le CSS est automatiquement scopé au composant. Le style ne fuit jamais vers les autres composants.</div>
+                    <div class="tut-highlight">Le CSS est automatiquement scope au composant.</div>
                 </div>
                 <div class="code-block">
                     <div class="code-head"><div class="code-dots"><span></span><span></span><span></span></div><span class="code-tag tag-s">SVELTE</span><span class="code-fname">App.svelte</span></div>
                     <div class="code-body"><pre><span class="tg">&lt;script&gt;</span>
-  <span class="cm">// Logique JavaScript ici</span>
   <span class="kw">let</span> name <span class="op">=</span> <span class="str">'Svelte'</span>;
 <span class="tg">&lt;/script&gt;</span>
 
-<span class="cm">&lt;!-- Template HTML --&gt;</span>
 <span class="tg">&lt;h1&gt;</span>Bonjour {name} !<span class="tg">&lt;/h1&gt;</span>
-<span class="tg">&lt;p&gt;</span>Bienvenue dans mon app<span class="tg">&lt;/p&gt;</span>
 
 <span class="tg">&lt;style&gt;</span>
-  <span class="fn">h1</span> {
-    <span class="at">color</span>: <span class="nm">#ff3e00</span>;
-    <span class="at">font-size</span>: <span class="nm">2em</span>;
-  }
+  <span class="fn">h1</span> { <span class="at">color</span>: <span class="nm">#ff3e00</span> }
 <span class="tg">&lt;/style&gt;</span></pre></div>
                 </div>
             </div>
@@ -509,28 +790,21 @@
         <div class="tut-panel" id="step1">
             <div class="tut-layout">
                 <div class="tut-explain">
-                    <h3><span>⚡</span> Réactivité avec $state</h3>
-                    <p>En Svelte 5, on déclare un état réactif avec <strong>$state()</strong>. Quand la valeur change, le DOM se met à jour automatiquement.</p>
-                    <p>On peut aussi calculer des valeurs dérivées avec <strong>$derived()</strong> — comme un computed qui se recalcule tout seul.</p>
-                    <div class="tut-highlight">Pas de useState, pas de setter function, pas de hook rules. Juste une variable qui trigger les updates.</div>
-                    <div class="tut-vs"><strong>React :</strong> const [todos, setTodos] = useState([])<br><strong>Svelte :</strong> let todos = $state([])<br><br>Svelte est 2× plus concis et plus lisible.</div>
+                    <h3><span>⚡</span> Reactivite avec $state</h3>
+                    <p><strong>$state()</strong> declare un etat reactif. <strong>$derived()</strong> calcule une valeur derivee.</p>
+                    <div class="tut-highlight">Pas de useState, pas de setter. Juste une variable qui trigger les updates.</div>
                 </div>
                 <div class="code-block">
                     <div class="code-head"><div class="code-dots"><span></span><span></span><span></span></div><span class="code-tag tag-s">SVELTE</span><span class="code-fname">Todo.svelte</span></div>
                     <div class="code-body"><pre><span class="tg">&lt;script&gt;</span>
-  <span class="cm">// État réactif</span>
   <span class="kw">let</span> todos <span class="op">=</span> <span class="fn">$state</span>([]);
   <span class="kw">let</span> newTodo <span class="op">=</span> <span class="fn">$state</span>(<span class="str">''</span>);
-
-  <span class="cm">// Valeur dérivée (recalculée auto)</span>
   <span class="kw">let</span> remaining <span class="op">=</span> <span class="fn">$derived</span>(
-    todos.<span class="fn">filter</span>(<span class="at">t</span> <span class="op">=></span> !t.done).length
+    todos.<span class="fn">filter</span>(<span class="at">t</span> <span class="op">=&gt;</span> !t.done).length
   );
 <span class="tg">&lt;/script&gt;</span>
 
-<span class="tg">&lt;h2&gt;</span>
-  {remaining} tâche{remaining <span class="op">!==</span> <span class="nm">1</span> <span class="op">?</span> <span class="str">'s'</span> <span class="op">:</span> <span class="str">''</span>} restante{remaining <span class="op">!==</span> <span class="nm">1</span> <span class="op">?</span> <span class="str">'s'</span> <span class="op">:</span> <span class="str">''</span>}
-<span class="tg">&lt;/h2&gt;</span></pre></div>
+<span class="tg">&lt;h2&gt;</span>{remaining} tache(s)<span class="tg">&lt;/h2&gt;</span></pre></div>
                 </div>
             </div>
         </div>
@@ -539,35 +813,21 @@
         <div class="tut-panel" id="step2">
             <div class="tut-layout">
                 <div class="tut-explain">
-                    <h3><span>🎯</span> Événements et binding</h3>
-                    <p>Les événements s'attachent naturellement : <strong>onclick</strong>, <strong>onsubmit</strong>, <strong>onkeydown</strong>...</p>
-                    <p><strong>bind:value</strong> crée un two-way binding — la variable et l'input sont synchronisés automatiquement.</p>
-                    <div class="tut-highlight">bind:value remplace onChange + setState de React. Une seule directive au lieu de 3 lignes.</div>
-                    <div class="tut-vs"><strong>React :</strong> value={text} onChange={e => setText(e.target.value)}<br><strong>Svelte :</strong> bind:value={text}<br><br>Two-way binding natif !</div>
+                    <h3><span>🎯</span> Evenements et binding</h3>
+                    <p><strong>bind:value</strong> = two-way binding. <strong>onclick</strong> = event handler.</p>
+                    <div class="tut-highlight">bind:value remplace onChange + setState de React.</div>
                 </div>
                 <div class="code-block">
                     <div class="code-head"><div class="code-dots"><span></span><span></span><span></span></div><span class="code-tag tag-s">SVELTE</span><span class="code-fname">Todo.svelte</span></div>
-                    <div class="code-body"><pre><span class="tg">&lt;script&gt;</span>
-  <span class="kw">let</span> todos <span class="op">=</span> <span class="fn">$state</span>([]);
-  <span class="kw">let</span> newTodo <span class="op">=</span> <span class="fn">$state</span>(<span class="str">''</span>);
-
-  <span class="kw">function</span> <span class="fn">addTodo</span>() {
-    <span class="kw">if</span> (!newTodo.trim()) <span class="kw">return</span>;
-    todos.<span class="fn">push</span>({
-      text: newTodo, done: <span class="nm">false</span>,
-      id: Date.<span class="fn">now</span>()
-    });
-    newTodo <span class="op">=</span> <span class="str">''</span>;
-  }
-<span class="tg">&lt;/script&gt;</span>
-
-<span class="cm">&lt;!-- bind:value = two-way binding --&gt;</span>
-<span class="tg">&lt;input</span>
+                    <div class="code-body"><pre><span class="tg">&lt;input</span>
   <span class="at">bind:value</span><span class="op">=</span>{newTodo}
-  <span class="at">placeholder</span><span class="op">=</span><span class="str">"Nouvelle tâche..."</span>
-  <span class="at">onkeydown</span><span class="op">=</span>{e <span class="op">=></span> e.key <span class="op">===</span> <span class="str">'Enter'</span> <span class="op">&&</span> <span class="fn">addTodo</span>()}
+  <span class="at">placeholder</span><span class="op">=</span><span class="str">"Nouvelle tache..."</span>
+  <span class="at">onkeydown</span><span class="op">=</span>{e <span class="op">=&gt;</span>
+    e.key <span class="op">===</span> <span class="str">'Enter'</span> <span class="op">&amp;&amp;</span> <span class="fn">addTodo</span>()}
 <span class="tg">/&gt;</span>
-<span class="tg">&lt;button</span> <span class="at">onclick</span><span class="op">=</span>{addTodo}<span class="tg">&gt;</span>Ajouter<span class="tg">&lt;/button&gt;</span></pre></div>
+<span class="tg">&lt;button</span> <span class="at">onclick</span><span class="op">=</span>{addTodo}<span class="tg">&gt;</span>
+  Ajouter
+<span class="tg">&lt;/button&gt;</span></pre></div>
                 </div>
             </div>
         </div>
@@ -577,30 +837,19 @@
             <div class="tut-layout">
                 <div class="tut-explain">
                     <h3><span>🔄</span> Boucles avec {#each}</h3>
-                    <p>Svelte utilise des <strong>blocs de template</strong> pour les boucles et conditions :</p>
-                    <p><strong>{#each}</strong> pour itérer, <strong>{#if}</strong> pour conditionner, <strong>{:else}</strong> pour le cas alternatif.</p>
-                    <p>La clé <strong>(todo.id)</strong> permet à Svelte de tracker chaque élément pour des updates efficaces.</p>
-                    <div class="tut-highlight">Pas de .map() avec return JSX. Le template est déclaratif et lisible comme du HTML.</div>
-                    <div class="tut-vs"><strong>React :</strong> {todos.map(t => &lt;li key={t.id}&gt;...&lt;/li&gt;)}<br><strong>Svelte :</strong> {#each todos as todo (todo.id)} ... {/each}<br><br>Plus lisible, surtout avec des templates complexes.</div>
+                    <p><strong>{#each}</strong> pour iterer, <strong>{#if}</strong> pour conditionner.</p>
+                    <div class="tut-highlight">Pas de .map() avec return JSX. Template declaratif.</div>
                 </div>
                 <div class="code-block">
                     <div class="code-head"><div class="code-dots"><span></span><span></span><span></span></div><span class="code-tag tag-s">SVELTE</span><span class="code-fname">Todo.svelte</span></div>
-                    <div class="code-body"><pre><span class="cm">&lt;!-- Boucle sur les todos --&gt;</span>
-{<span class="kw">#each</span> todos <span class="kw">as</span> todo (todo.id)}
-  <span class="tg">&lt;div</span> <span class="at">class</span><span class="op">=</span><span class="str">"todo"</span>
-       <span class="at">class:done</span><span class="op">=</span>{todo.done}<span class="tg">&gt;</span>
-
-    <span class="tg">&lt;input</span>
-      <span class="at">type</span><span class="op">=</span><span class="str">"checkbox"</span>
-      <span class="at">bind:checked</span><span class="op">=</span>{todo.done}
-    <span class="tg">/&gt;</span>
+                    <div class="code-body"><pre>{<span class="kw">#each</span> todos <span class="kw">as</span> todo (todo.id)}
+  <span class="tg">&lt;div</span> <span class="at">class:done</span><span class="op">=</span>{todo.done}<span class="tg">&gt;</span>
+    <span class="tg">&lt;input</span> <span class="at">type</span><span class="op">=</span><span class="str">"checkbox"</span>
+      <span class="at">bind:checked</span><span class="op">=</span>{todo.done} <span class="tg">/&gt;</span>
     <span class="tg">&lt;span&gt;</span>{todo.text}<span class="tg">&lt;/span&gt;</span>
-    <span class="tg">&lt;button</span> <span class="at">onclick</span><span class="op">=</span>{() <span class="op">=></span> <span class="fn">remove</span>(todo.id)}<span class="tg">&gt;</span>
-      ✕
-    <span class="tg">&lt;/button&gt;</span>
   <span class="tg">&lt;/div&gt;</span>
 {<span class="kw">:else</span>}
-  <span class="tg">&lt;p&gt;</span>Aucune tâche ! 🎉<span class="tg">&lt;/p&gt;</span>
+  <span class="tg">&lt;p&gt;</span>Aucune tache !<span class="tg">&lt;/p&gt;</span>
 {<span class="kw">/each</span>}</pre></div>
                 </div>
             </div>
@@ -611,42 +860,35 @@
             <div class="tut-layout">
                 <div class="tut-explain">
                     <h3><span>🎬</span> Transitions & animations</h3>
-                    <p>Svelte intègre un <strong>système d'animations</strong> directement dans le langage. Pas de librairie externe nécessaire.</p>
-                    <p><strong>transition:slide</strong> = animation entrée + sortie<br><strong>in:fly</strong> = animation d'entrée uniquement<br><strong>animate:flip</strong> = animation de réordonnement</p>
-                    <div class="tut-highlight">En React, il faut installer framer-motion ou react-spring (30+ KB). En Svelte, c'est natif et ne coûte 0 KB de runtime supplémentaire.</div>
+                    <p>Svelte integre un systeme d'animations natif. Pas de librairie externe.</p>
+                    <div class="tut-highlight">En React : framer-motion (30+ KB). En Svelte : natif et 0 KB supplementaire.</div>
                 </div>
                 <div class="code-block">
                     <div class="code-head"><div class="code-dots"><span></span><span></span><span></span></div><span class="code-tag tag-s">SVELTE</span><span class="code-fname">Todo.svelte</span></div>
                     <div class="code-body"><pre><span class="tg">&lt;script&gt;</span>
-  <span class="kw">import</span> { slide, fade } <span class="kw">from</span>
-    <span class="str">'svelte/transition'</span>;
-  <span class="kw">import</span> { flip } <span class="kw">from</span>
-    <span class="str">'svelte/animate'</span>;
+  <span class="kw">import</span> { slide, fade }
+    <span class="kw">from</span> <span class="str">'svelte/transition'</span>;
+  <span class="kw">import</span> { flip }
+    <span class="kw">from</span> <span class="str">'svelte/animate'</span>;
 <span class="tg">&lt;/script&gt;</span>
 
 {<span class="kw">#each</span> todos <span class="kw">as</span> todo (todo.id)}
-  <span class="cm">&lt;!-- Animations automatiques --&gt;</span>
   <span class="tg">&lt;div</span>
     <span class="at">transition:slide</span><span class="op">=</span>{{ duration: <span class="nm">300</span> }}
     <span class="at">animate:flip</span><span class="op">=</span>{{ duration: <span class="nm">200</span> }}
   <span class="tg">&gt;</span>
     {todo.text}
   <span class="tg">&lt;/div&gt;</span>
-{<span class="kw">/each</span>}
-
-<span class="cm">&lt;!-- Ou encore plus simple : --&gt;</span>
-{<span class="kw">#if</span> visible}
-  <span class="tg">&lt;div</span> <span class="at">transition:fade</span><span class="tg">&gt;</span>Hello<span class="tg">&lt;/div&gt;</span>
-{<span class="kw">/if</span>}</pre></div>
+{<span class="kw">/each</span>}</pre></div>
                 </div>
             </div>
         </div>
 
-        <!-- STEP 6: FULL COMPARISON -->
+        <!-- STEP 6: COMPARISON -->
         <div class="tut-panel" id="step5">
             <div style="text-align:center;margin-bottom:24px">
-                <h3 style="font-size:22px;font-weight:700">Todo App complète : Svelte vs React</h3>
-                <p style="color:var(--txt2);font-size:14px;margin-top:6px">La même app. Comptez les lignes.</p>
+                <h3 style="font-size:22px;font-weight:700">Todo App : Svelte vs React</h3>
+                <p style="color:var(--txt2);font-size:14px;margin-top:6px">La meme app. Comptez les lignes.</p>
             </div>
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
                 <div class="code-block">
@@ -655,8 +897,7 @@
   <span class="kw">let</span> todos <span class="op">=</span> <span class="fn">$state</span>([]);
   <span class="kw">let</span> text <span class="op">=</span> <span class="fn">$state</span>(<span class="str">''</span>);
   <span class="kw">let</span> left <span class="op">=</span> <span class="fn">$derived</span>(
-    todos.<span class="fn">filter</span>(<span class="at">t</span><span class="op">=></span>!t.done).length
-  );
+    todos.<span class="fn">filter</span>(<span class="at">t</span><span class="op">=&gt;</span>!t.done).length);
   <span class="kw">function</span> <span class="fn">add</span>() {
     <span class="kw">if</span>(!text.trim()) <span class="kw">return</span>;
     todos.<span class="fn">push</span>({text, done:<span class="nm">false</span>,
@@ -667,9 +908,7 @@
 
 <span class="tg">&lt;h2&gt;</span>Todos ({left})<span class="tg">&lt;/h2&gt;</span>
 <span class="tg">&lt;input</span> <span class="at">bind:value</span><span class="op">=</span>{text}
-  <span class="at">onkeydown</span><span class="op">=</span>{e<span class="op">=></span>e.key<span class="op">===</span><span class="str">'Enter'</span><span class="op">&&</span><span class="fn">add</span>()} <span class="tg">/&gt;</span>
-<span class="tg">&lt;button</span> <span class="at">onclick</span><span class="op">=</span>{add}<span class="tg">&gt;</span>+<span class="tg">&lt;/button&gt;</span>
-
+  <span class="at">onkeydown</span><span class="op">=</span>{e<span class="op">=&gt;</span>e.key<span class="op">===</span><span class="str">'Enter'</span><span class="op">&amp;&amp;</span><span class="fn">add</span>()} <span class="tg">/&gt;</span>
 {<span class="kw">#each</span> todos <span class="kw">as</span> t (t.id)}
   <span class="tg">&lt;label</span> <span class="at">class:done</span><span class="op">=</span>{t.done}<span class="tg">&gt;</span>
     <span class="tg">&lt;input</span> <span class="at">type</span><span class="op">=</span><span class="str">"checkbox"</span>
@@ -680,15 +919,16 @@
                 </div>
                 <div class="code-block">
                     <div class="code-head"><div class="code-dots"><span></span><span></span><span></span></div><span class="code-tag tag-r">REACT</span><span class="code-fname">Todo.jsx — 42 lignes</span></div>
-                    <div class="code-body"><pre><span class="kw">import</span> {useState,useMemo} <span class="kw">from</span> <span class="str">'react'</span>;
+                    <div class="code-body"><pre><span class="kw">import</span> {useState,useMemo}
+  <span class="kw">from</span> <span class="str">'react'</span>;
 
 <span class="kw">export default function</span> <span class="fn">Todo</span>() {
   <span class="kw">const</span> [todos,setTodos] <span class="op">=</span>
     <span class="fn">useState</span>([]);
   <span class="kw">const</span> [text,setText] <span class="op">=</span>
     <span class="fn">useState</span>(<span class="str">''</span>);
-  <span class="kw">const</span> left <span class="op">=</span> <span class="fn">useMemo</span>(<span class="op">=></span>
-    todos.<span class="fn">filter</span>(<span class="at">t</span><span class="op">=></span>!t.done).length,
+  <span class="kw">const</span> left <span class="op">=</span> <span class="fn">useMemo</span>(<span class="op">=&gt;</span>
+    todos.<span class="fn">filter</span>(<span class="at">t</span><span class="op">=&gt;</span>!t.done).length,
     [todos]);
 
   <span class="kw">function</span> <span class="fn">add</span>() {
@@ -699,26 +939,22 @@
     <span class="fn">setText</span>(<span class="str">''</span>);
   }
   <span class="kw">function</span> <span class="fn">toggle</span>(id) {
-    <span class="fn">setTodos</span>(todos.<span class="fn">map</span>(<span class="at">t</span> <span class="op">=></span>
+    <span class="fn">setTodos</span>(todos.<span class="fn">map</span>(<span class="at">t</span> <span class="op">=&gt;</span>
       t.id<span class="op">===</span>id ? {...t,
         done:!t.done} : t));
   }
   <span class="kw">return</span> (<span class="tg">&lt;&gt;</span>
     <span class="tg">&lt;h2&gt;</span>Todos ({left})<span class="tg">&lt;/h2&gt;</span>
     <span class="tg">&lt;input</span> <span class="at">value</span><span class="op">=</span>{text}
-      <span class="at">onChange</span><span class="op">=</span>{e<span class="op">=></span><span class="fn">setText</span>(e.target.value)}
-      <span class="at">onKeyDown</span><span class="op">=</span>{e<span class="op">=></span>e.key<span class="op">===</span><span class="str">'Enter'</span><span class="op">&&</span><span class="fn">add</span>()}
-    <span class="tg">/&gt;</span>
-    <span class="tg">&lt;button</span> <span class="at">onClick</span><span class="op">=</span>{add}<span class="tg">&gt;</span>+<span class="tg">&lt;/button&gt;</span>
-    {todos.<span class="fn">map</span>(<span class="at">t</span><span class="op">=></span>
-      <span class="tg">&lt;label</span> <span class="at">key</span><span class="op">=</span>{t.id}
-        <span class="at">className</span><span class="op">=</span>{t.done?<span class="str">'done'</span>:<span class="str">''</span>}<span class="tg">&gt;</span>
+      <span class="at">onChange</span><span class="op">=</span>{e<span class="op">=&gt;</span><span class="fn">setText</span>(
+        e.target.value)} <span class="tg">/&gt;</span>
+    {todos.<span class="fn">map</span>(<span class="at">t</span><span class="op">=&gt;</span>
+      <span class="tg">&lt;label</span> <span class="at">key</span><span class="op">=</span>{t.id}<span class="tg">&gt;</span>
         <span class="tg">&lt;input</span> <span class="at">type</span><span class="op">=</span><span class="str">"checkbox"</span>
           <span class="at">checked</span><span class="op">=</span>{t.done}
-          <span class="at">onChange</span><span class="op">=</span>{()<span class="op">=></span><span class="fn">toggle</span>(t.id)}<span class="tg">/&gt;</span>
+          <span class="at">onChange</span><span class="op">=</span>{()<span class="op">=&gt;</span><span class="fn">toggle</span>(t.id)}<span class="tg">/&gt;</span>
         {t.text}
-      <span class="tg">&lt;/label&gt;</span>
-    )}
+      <span class="tg">&lt;/label&gt;</span>)}
   <span class="tg">&lt;/&gt;</span>);
 }</pre></div>
                 </div>
@@ -733,12 +969,12 @@
     </div>
 </section>
 
-<!-- ========== LIVE DEMO TODO APP ========== -->
+<!-- ==================== 12. DEMO LIVE ==================== -->
 <section class="slide" id="livedemo">
     <div style="text-align:center">
-        <div class="stag rv">Démo Live</div>
+        <div class="stag rv">Demo Live</div>
         <h2 class="stitle rv rv1">Todo App <span class="grad">interactive</span></h2>
-        <p class="sdesc rv rv2" style="margin:0 auto">Testez en direct — cette app fonctionne comme du Svelte compilé</p>
+        <p class="sdesc rv rv2" style="margin:0 auto">Testez en direct — cette app fonctionne comme du Svelte compile</p>
     </div>
     <div style="margin-top:40px;display:flex;gap:40px;align-items:start;justify-content:center;flex-wrap:wrap" class="rv rv3">
         <div class="todo-phone">
@@ -746,23 +982,23 @@
             <div class="todo-screen">
                 <div class="todo-header">
                     <div class="todo-title">Mes Todos</div>
-                    <div class="todo-count-badge" id="todoBadge">0 tâches</div>
+                    <div class="todo-count-badge" id="todoBadge">0 taches</div>
                 </div>
                 <div class="todo-input-row">
-                    <input class="todo-input" id="todoInput" placeholder="Ajouter une tâche..." onkeydown="if(event.key==='Enter')addTodoItem()">
+                    <input class="todo-input" id="todoInput" placeholder="Ajouter une tache..." onkeydown="if(event.key==='Enter')addTodoItem()">
                     <button class="todo-add-btn" onclick="addTodoItem()">+</button>
                 </div>
                 <ul class="todo-list" id="todoList">
-                    <div class="todo-empty" id="todoEmpty">Aucune tâche. Ajoutez-en une ! ✨</div>
+                    <div class="todo-empty" id="todoEmpty">Aucune tache. Ajoutez-en une !</div>
                 </ul>
                 <div class="todo-footer">
                     <span id="todoRemaining">0 restante(s)</span>
-                    <button class="todo-clear-btn" onclick="clearDone()">Supprimer terminées</button>
+                    <button class="todo-clear-btn" onclick="clearDone()">Supprimer terminees</button>
                 </div>
             </div>
         </div>
         <div class="todo-code-sync">
-            <div style="font-size:12px;color:var(--txt2);margin-bottom:8px;font-weight:600">État Svelte en temps réel :</div>
+            <div style="font-size:12px;color:var(--txt2);margin-bottom:8px;font-weight:600">Etat Svelte en temps reel :</div>
             <div class="todo-code-live" id="todoCodeLive">
 <span class="hl">let</span> todos = <span class="hl">$state</span>([]);
 <span class="hl">let</span> remaining = <span class="hl">$derived</span>(0);
@@ -771,12 +1007,12 @@
     </div>
 </section>
 
-<!-- COMPANIES -->
+<!-- ==================== 13. ADOPTION ==================== -->
 <section class="slide" id="companies">
     <div style="text-align:center;margin-bottom:8px">
         <div class="stag rv">Adoption</div>
         <h2 class="stitle rv rv1">Qui utilise <span class="grad">Svelte ?</span></h2>
-        <p class="sdesc rv rv2" style="margin:0 auto">Des géants de la tech en production</p>
+        <p class="sdesc rv rv2" style="margin:0 auto">Des geants de la tech en production</p>
     </div>
     <div class="co-grid">
         <div class="co-card rv rv1"><div class="co-logo">🍎</div><div class="co-name">Apple</div><div class="co-desc">SwiftUI Tutorials</div></div>
@@ -792,34 +1028,34 @@
     </div>
     <div class="co-quote rv rv5">
         <div class="co-quote-mark">"</div>
-        <div style="font-size:15px;font-style:italic;line-height:1.7">Svelte nous a permis de réduire notre bundle de 70% et d'améliorer notre Time-to-Interactive de 3 secondes.</div>
-        <div style="margin-top:12px;font-size:12px;color:var(--orange);font-weight:600">— Équipe Engineering, Chess.com</div>
+        <div style="font-size:15px;font-style:italic;line-height:1.7">Svelte nous a permis de reduire notre bundle de 70% et d'ameliorer notre Time-to-Interactive de 3 secondes.</div>
+        <div style="margin-top:12px;font-size:12px;color:var(--orange);font-weight:600">— Equipe Engineering, Chess.com</div>
     </div>
 </section>
 
-<!-- QUIZ -->
+<!-- ==================== 14. QUIZ ==================== -->
 <section class="slide" id="quiz">
     <div style="text-align:center"><div class="stag rv">Quiz Time !</div><h2 class="stitle rv rv1">Testez vos <span class="grad">connaissances</span></h2></div>
     <div class="quiz-container rv rv2">
         <div class="qcard" id="quizCard">
-            <div class="qq-num" id="quizQNum">Question 1 / 4</div>
+            <div class="qq-num" id="quizQNum">Question 1 / 8</div>
             <div class="qq-text" id="quizQText"></div>
             <div class="q-opts" id="quizOpts"></div>
             <div class="q-fb" id="quizFb"></div>
             <button class="q-next" id="quizNext" onclick="qNext()">Suivante →</button>
         </div>
-        <div class="q-score" id="quizScore"><div class="q-score-num" id="quizScoreNum">0/4</div><div class="q-score-lbl">Bravo !</div></div>
+        <div class="q-score" id="quizScore"><div class="q-score-num" id="quizScoreNum">0/8</div><div class="q-score-lbl">Bravo !</div></div>
     </div>
 </section>
 
-<!-- CONCLUSION -->
+<!-- ==================== 15. CONCLUSION ==================== -->
 <section class="slide" id="conclusion">
     <div class="stag rv">Conclusion</div>
-    <h2 class="conc-title rv rv1">Le futur du web est<br><span class="grad">compilé</span></h2>
-    <p class="conc-text rv rv2">Svelte prouve qu'on peut faire plus avec moins. Moins de code, moins de complexité, moins de poids — pour plus de performance.</p>
+    <h2 class="conc-title rv rv1">Le futur du web est<br><span class="grad">compile</span></h2>
+    <p class="conc-text rv rv2">Svelte prouve qu'on peut faire plus avec moins. Performance extreme, DX inegalee, mais un ecosysteme encore en croissance. Un choix ideal pour des projets ou la performance et la simplicite comptent.</p>
     <div class="rv rv3">
         <div class="conc-quote">Write less code. No virtual DOM. Truly reactive.</div>
-        <div class="conc-author">— Rich Harris, créateur de Svelte</div>
+        <div class="conc-author">— Rich Harris, createur de Svelte</div>
     </div>
     <div class="thankyou rv rv4">Merci</div>
 </section>
@@ -835,7 +1071,11 @@ const pEl=document.getElementById('particles');
 const cols=['#ff3e00','#4fc3f7','#b388ff','#69f0ae','#ff80ab'];
 for(let i=0;i<25;i++){const p=document.createElement('div');p.className='particle';const s=Math.random()*4+2;p.style.width=s+'px';p.style.height=s+'px';p.style.left=Math.random()*100+'%';p.style.background=cols[Math.floor(Math.random()*cols.length)];p.style.animationDuration=(Math.random()*20+15)+'s';p.style.animationDelay=(Math.random()*20)+'s';pEl.appendChild(p)}
 
-// REVEAL
+// SLIDE TRANSITION ON SCROLL
+const slideObs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('slide-visible')})},{threshold:.15});
+document.querySelectorAll('.slide').forEach(el=>slideObs.observe(el));
+
+// REVEAL ELEMENTS
 const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('vis')})},{threshold:.12});
 document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
 
@@ -880,28 +1120,30 @@ document.querySelectorAll('.pbar-grp').forEach(el=>bObs.observe(el));
 const cObs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.querySelectorAll('.stat-num').forEach(el=>{const t=parseInt(el.dataset.count);let c=0;const inc=t/30;const tmr=setInterval(()=>{c+=inc;if(c>=t){el.textContent=t;clearInterval(tmr)}else el.textContent=Math.ceil(c)},50)})})},{threshold:.5});
 const hs=document.querySelector('.hero-stats');if(hs)cObs.observe(hs);
 
-// PROGRESS BAR
+// PROGRESS BAR & NAV
 const pb=document.getElementById('progressBar');
 const secs=document.querySelectorAll('.slide');
 const nLinks=document.querySelectorAll('.nav-links a');
 const sc=document.getElementById('slideCounter');
 window.addEventListener('scroll',()=>{const st=window.scrollY;const dh=document.documentElement.scrollHeight-window.innerHeight;pb.style.width=(st/dh)*100+'%';let cur='',idx=0;secs.forEach((s,i)=>{if(st>=s.offsetTop-200){cur=s.id;idx=i+1}});nLinks.forEach(l=>{l.classList.remove('active');if(l.getAttribute('href')==='#'+cur)l.classList.add('active')});sc.textContent=String(idx).padStart(2,'0')+' / '+String(secs.length).padStart(2,'0')});
 
-// KEYBOARD
+// KEYBOARD NAV
 document.addEventListener('keydown',e=>{
-    // Block slide navigation while plan reveal is active
     if(planOnSlide && planIdx<planItems.length && (e.key===' '||e.key==='ArrowDown'||e.key==='ArrowRight'||e.key==='Enter')){return}
-    let ci=0;secs.forEach((s,i)=>{if(window.scrollY>=s.offsetTop-200)ci=i});if(e.key==='ArrowDown'||e.key==='ArrowRight'||e.key===' '){e.preventDefault();secs[Math.min(ci+1,secs.length-1)].scrollIntoView({behavior:'smooth'})}if(e.key==='ArrowUp'||e.key==='ArrowLeft'){e.preventDefault();secs[Math.max(ci-1,0)].scrollIntoView({behavior:'smooth'})}const n=parseInt(e.key);if(n>=1&&n<=secs.length)secs[n-1].scrollIntoView({behavior:'smooth'})
+    let ci=0;secs.forEach((s,i)=>{if(window.scrollY>=s.offsetTop-200)ci=i});
+    if(e.key==='ArrowDown'||e.key==='ArrowRight'||e.key===' '){e.preventDefault();secs[Math.min(ci+1,secs.length-1)].scrollIntoView({behavior:'smooth'})}
+    if(e.key==='ArrowUp'||e.key==='ArrowLeft'){e.preventDefault();secs[Math.max(ci-1,0)].scrollIntoView({behavior:'smooth'})}
+    const n=parseInt(e.key);if(n>=1&&n<=secs.length)secs[n-1].scrollIntoView({behavior:'smooth'})
 });
 
-// ========== TUTORIAL STEPS ==========
+// TUTORIAL STEPS
 function showStep(idx){document.querySelectorAll('.tut-panel').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.tut-step-btn').forEach(b=>b.classList.remove('active'));document.getElementById('step'+idx).classList.add('active');document.querySelectorAll('.tut-step-btn')[idx].classList.add('active')}
 
-// ========== LIVE TODO APP ==========
+// LIVE TODO APP
 let todoItems=[];let todoId=0;
-function renderTodos(){const list=document.getElementById('todoList');const empty=document.getElementById('todoEmpty');const badge=document.getElementById('todoBadge');const rem=document.getElementById('todoRemaining');const codeLive=document.getElementById('todoCodeLive');
-list.innerHTML='';if(todoItems.length===0){list.innerHTML='<div class="todo-empty">Aucune tâche. Ajoutez-en une ! ✨</div>'}else{todoItems.forEach(t=>{const li=document.createElement('li');li.className='todo-item'+(t.done?' done':'');li.innerHTML=`<div class="todo-check" onclick="toggleTodo(${t.id})">${t.done?'✓':''}</div><span class="todo-text">${t.text}</span><button class="todo-del" onclick="delTodo(${t.id})">✕</button>`;list.appendChild(li)})}
-const remaining=todoItems.filter(t=>!t.done).length;badge.textContent=todoItems.length+' tâche'+(todoItems.length!==1?'s':'');rem.textContent=remaining+' restante'+(remaining!==1?'s':'');
+function renderTodos(){const list=document.getElementById('todoList');const badge=document.getElementById('todoBadge');const rem=document.getElementById('todoRemaining');const codeLive=document.getElementById('todoCodeLive');
+list.innerHTML='';if(todoItems.length===0){list.innerHTML='<div class="todo-empty">Aucune tache. Ajoutez-en une !</div>'}else{todoItems.forEach(t=>{const li=document.createElement('li');li.className='todo-item'+(t.done?' done':'');li.innerHTML=`<div class="todo-check" onclick="toggleTodo(${t.id})">${t.done?'✓':''}</div><span class="todo-text">${t.text}</span><button class="todo-del" onclick="delTodo(${t.id})">✕</button>`;list.appendChild(li)})}
+const remaining=todoItems.filter(t=>!t.done).length;badge.textContent=todoItems.length+' tache'+(todoItems.length!==1?'s':'');rem.textContent=remaining+' restante'+(remaining!==1?'s':'');
 const todosStr=todoItems.length===0?'[]':'[\n'+todoItems.map(t=>`  {text:"${t.text}", done:${t.done}}`).join(',\n')+'\n]';
 codeLive.innerHTML=`<span class="hl">let</span> todos = <span class="hl">$state</span>(${todosStr});\n<span class="hl">let</span> remaining = <span class="hl">$derived</span>(${remaining});`}
 function addTodoItem(){const inp=document.getElementById('todoInput');if(!inp.value.trim())return;todoItems.push({id:++todoId,text:inp.value.trim(),done:false});inp.value='';renderTodos()}
@@ -909,16 +1151,25 @@ function toggleTodo(id){const t=todoItems.find(x=>x.id===id);if(t)t.done=!t.done
 function delTodo(id){todoItems=todoItems.filter(x=>x.id!==id);renderTodos()}
 function clearDone(){todoItems=todoItems.filter(x=>!x.done);renderTodos()}
 
-// ========== QUIZ ==========
-const qData=[{q:"Quel concept clé différencie Svelte ?",opts:["Virtual DOM","Compilation","Shadow DOM","Web Workers"],ok:1,exp:"Svelte est un compilateur ! Il transforme le code en JS optimisé au build."},{q:"Taille du runtime Svelte ?",opts:["42 KB","16 KB","0 KB","8 KB"],ok:2,exp:"Svelte n'a pas de runtime ! Le code compilé est du JS vanilla."},{q:"Variable réactive en Svelte 5 ?",opts:["useState()","ref()","$state()","reactive()"],ok:2,exp:"$state() est la Rune de Svelte 5 pour la réactivité."},{q:"Qui a créé Svelte ?",opts:["Dan Abramov","Evan You","Rich Harris","Ryan Dahl"],ok:2,exp:"Rich Harris, ex-journaliste NY Times, maintenant chez Vercel."}];
+// QUIZ - 8 QUESTIONS (including "Medini-style" tricky ones)
+const qData=[
+    {q:"Quel concept cle differencie Svelte des autres frameworks ?",opts:["Virtual DOM","Compilation","Shadow DOM","Web Workers"],ok:1,exp:"Svelte est un compilateur ! Il transforme le code en JS optimise au build."},
+    {q:"Quelle est la taille du runtime Svelte ?",opts:["42 KB","16 KB","0 KB","8 KB"],ok:2,exp:"Svelte n'a pas de runtime ! Le code compile est du JS vanilla."},
+    {q:"Comment declarer une variable reactive en Svelte 5 ?",opts:["useState()","ref()","$state()","reactive()"],ok:2,exp:"$state() est la Rune de Svelte 5 pour la reactivite."},
+    {q:"Quelle est la principale LIMITE de Svelte ?",opts:["Performance faible","Ecosysteme plus petit","Pas de CSS scope","Pas de composants"],ok:1,exp:"L'ecosysteme est plus petit que React/Vue : moins de libs, moins de tutos, moins d'offres d'emploi."},
+    {q:"Svelte utilise-t-il un Virtual DOM ?",opts:["Oui, comme React","Oui, mais optimise","Non, compilation directe","Oui, via Shadow DOM"],ok:2,exp:"Non ! Svelte compile en instructions DOM directes. Pas de VDOM, pas de diffing."},
+    {q:"Quel concept du cours se retrouve dans bind:value ?",opts:["Routing","Data binding","MVC pattern","Web Workers"],ok:1,exp:"bind:value implemente le data binding bidirectionnel (two-way binding) vu en cours."},
+    {q:"Qui a cree Svelte ?",opts:["Dan Abramov","Evan You","Rich Harris","Ryan Dahl"],ok:2,exp:"Rich Harris, ex-journaliste dev au NY Times, maintenant chez Vercel."},
+    {q:"Pourquoi Svelte reste pertinent face a l'IA ?",opts:["L'IA ne genere pas de JS","Le bundle leger est ideal pour les UI IA","Svelte utilise du machine learning","L'IA remplace Svelte"],ok:1,exp:"La legerete de Svelte en fait un choix ideal pour construire des interfaces autour de modeles IA."}
+];
 let qCur=0,qOk=0;const qLet=['A','B','C','D'];
 function renderQ(){const q=qData[qCur];document.getElementById('quizQNum').textContent=`Question ${qCur+1} / ${qData.length}`;document.getElementById('quizQText').textContent=q.q;document.getElementById('quizFb').className='q-fb';document.getElementById('quizFb').style.display='none';document.getElementById('quizNext').className='q-next';document.getElementById('quizNext').style.display='none';const o=document.getElementById('quizOpts');o.innerHTML='';q.opts.forEach((op,i)=>{const d=document.createElement('div');d.className='q-opt';d.innerHTML=`<div class="q-let">${qLet[i]}</div><span>${op}</span>`;d.addEventListener('click',()=>qAns(i));o.appendChild(d)})}
-function qAns(idx){const q=qData[qCur];document.querySelectorAll('.q-opt').forEach((o,i)=>{o.classList.add('qd');if(i===q.ok)o.classList.add('ok');if(i===idx&&idx!==q.ok)o.classList.add('ko')});const fb=document.getElementById('quizFb');const nb=document.getElementById('quizNext');if(idx===q.ok){qOk++;fb.className='q-fb win show';fb.innerHTML='✅ Correct ! '+q.exp}else{fb.className='q-fb lose show';fb.innerHTML='❌ Raté ! '+q.exp}nb.className='q-next show';nb.textContent=qCur<qData.length-1?'Suivante →':'Score 🏆'}
-function qNext(){qCur++;if(qCur>=qData.length){document.getElementById('quizCard').style.display='none';const s=document.getElementById('quizScore');s.className='q-score show';const sn=document.getElementById('quizScoreNum');sn.textContent=`${qOk}/${qData.length}`;sn.style.color=qOk>=3?'var(--green)':'var(--pink)';if(qOk>=3)confetti()}else renderQ()}
-const qObs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){renderQ();qObs.unobserve(x.target)}})},{threshold:.3});const qs=document.getElementById('quiz');if(qs)qObs.observe(qs);
+function qAns(idx){const q=qData[qCur];document.querySelectorAll('.q-opt').forEach((o,i)=>{o.classList.add('qd');if(i===q.ok)o.classList.add('ok');if(i===idx&&idx!==q.ok)o.classList.add('ko')});const fb=document.getElementById('quizFb');const nb=document.getElementById('quizNext');if(idx===q.ok){qOk++;fb.className='q-fb win show';fb.innerHTML='Correct ! '+q.exp}else{fb.className='q-fb lose show';fb.innerHTML='Rate ! '+q.exp}nb.className='q-next show';nb.textContent=qCur<qData.length-1?'Suivante →':'Score'}
+function qNext(){qCur++;if(qCur>=qData.length){document.getElementById('quizCard').style.display='none';const s=document.getElementById('quizScore');s.className='q-score show';const sn=document.getElementById('quizScoreNum');sn.textContent=`${qOk}/${qData.length}`;sn.style.color=qOk>=5?'var(--green)':'var(--pink)';if(qOk>=5)confetti()}else renderQ()}
+const qObs2=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){renderQ();qObs2.unobserve(x.target)}})},{threshold:.3});const qs=document.getElementById('quiz');if(qs)qObs2.observe(qs);
 
 // CONFETTI
-function confetti(){const c=document.createElement('div');c.className='confetti-container';document.body.appendChild(c);const cols=['#ff3e00','#ff6b35','#4fc3f7','#b388ff','#69f0ae','#ff80ab','#ffd740','#fff'];for(let i=0;i<80;i++){const p=document.createElement('div');p.className='confetti-piece';const s=Math.random()*10+6;p.style.width=s+'px';p.style.height=s*(Math.random()*.6+.4)+'px';p.style.background=cols[Math.floor(Math.random()*cols.length)];p.style.left=Math.random()*100+'%';p.style.borderRadius=Math.random()>.5?'50%':'2px';p.style.animationDuration=(Math.random()*2+2)+'s';p.style.animationDelay=(Math.random()*1.5)+'s';c.appendChild(p)}setTimeout(()=>c.remove(),5000)}
+function confetti(){const c=document.createElement('div');c.className='confetti-container';document.body.appendChild(c);const cls=['#ff3e00','#ff6b35','#4fc3f7','#b388ff','#69f0ae','#ff80ab','#ffd740','#fff'];for(let i=0;i<80;i++){const p=document.createElement('div');p.className='confetti-piece';const s=Math.random()*10+6;p.style.width=s+'px';p.style.height=s*(Math.random()*.6+.4)+'px';p.style.background=cls[Math.floor(Math.random()*cls.length)];p.style.left=Math.random()*100+'%';p.style.borderRadius=Math.random()>.5?'50%':'2px';p.style.animationDuration=(Math.random()*2+2)+'s';p.style.animationDelay=(Math.random()*1.5)+'s';c.appendChild(p)}setTimeout(()=>c.remove(),5000)}
 </script>
 </body>
 </html>
