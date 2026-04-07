@@ -1905,6 +1905,32 @@
             margin-top: 4px
         }
 
+        /* MIF13 DEMO */
+        .mif13-layout{display:grid;grid-template-columns:1fr 1fr;gap:28px;max-width:1100px;width:100%;margin-top:32px;align-items:start}
+        .mif13-phone{width:340px;border-radius:24px;overflow:hidden;border:2px solid var(--border);background:#1a1a2e;box-shadow:0 20px 60px rgba(0,0,0,.4)}
+        .mif13-screen{padding:18px 16px 22px}
+        .mif13-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+        .mif13-title{font-family:'Space Grotesk';font-size:16px;font-weight:800}
+        .mif13-badge{font-size:10px;padding:3px 10px;border-radius:16px;font-weight:600}
+        .mif13-map{width:100%;height:180px;border-radius:12px;background:linear-gradient(135deg,#1a3a4a,#0d2030);border:1px solid var(--border);position:relative;overflow:hidden;margin-bottom:14px}
+        .mif13-map-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:20px 20px}
+        .mif13-marker{position:absolute;width:12px;height:12px;border-radius:50%;border:2px solid #fff;transition:all 1s ease;box-shadow:0 0 8px rgba(0,0,0,.5)}
+        .mif13-zrr{position:absolute;border:2px dashed rgba(255,62,0,.4);border-radius:4px;background:rgba(255,62,0,.03)}
+        .mif13-objects{list-style:none;max-height:160px;overflow-y:auto}
+        .mif13-obj{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:10px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.05);margin-bottom:6px;transition:all .3s;font-size:13px}
+        .mif13-obj:hover{background:rgba(255,255,255,.06)}
+        .mif13-obj.captured{opacity:.4;text-decoration:line-through}
+        .mif13-obj-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+        .mif13-obj-ttl{font-family:'JetBrains Mono';font-size:11px;margin-left:auto;color:var(--txt2)}
+        .mif13-obj-ttl.urgent{color:#ff5252;animation:blink 1s infinite}
+        .mif13-obj-btn{padding:4px 10px;border-radius:6px;border:1px solid rgba(255,62,0,.3);background:rgba(255,62,0,.1);color:var(--orange);font-size:10px;font-weight:600;cursor:pointer;transition:all .2s;margin-left:8px}
+        .mif13-obj-btn:hover{background:var(--orange);color:#fff}
+        .mif13-obj-btn:disabled{opacity:.3;cursor:default}
+        .mif13-score{display:flex;justify-content:space-between;align-items:center;margin-top:12px;padding-top:10px;border-top:1px solid var(--border);font-size:11px;color:var(--txt2)}
+        .mif13-score-val{font-family:'Space Grotesk';font-weight:800;color:var(--orange)}
+        .mif13-code-live{padding:12px 14px;border-radius:10px;background:#1a1a2e;border:1px solid var(--border);font-family:'JetBrains Mono';font-size:10px;line-height:1.7;color:var(--txt2);overflow-x:auto;margin-top:14px}
+        .mif13-code-live .hl{color:var(--orange)}
+
         /* CONFETTI */
         .confetti-container {
             position: fixed;
@@ -2165,6 +2191,7 @@
             <a href="#ia">IA</a>
             <a href="#tutorial">Tuto</a>
             <a href="#livedemo">Demo</a>
+            <a href="#mif13">MIF13</a>
             <a href="#sveltekit">SvelteKit</a>
             <a href="#quiz">Quiz</a>
         </div>
@@ -3129,7 +3156,93 @@ count.<span class="fn">update</span>(n <span class="op">=&gt;</span> n + <span c
         </div>
     </section>
 
-    <!-- ==================== 13. ADOPTION ==================== -->
+    <!-- ==================== 13. MIF13 — MISSION NAUTILUS EN SVELTE ==================== -->
+    <section class="slide" id="mif13">
+        <div style="text-align:center;margin-bottom:8px">
+            <div class="stag rv">Notre projet MIF13</div>
+            <h2 class="stitle rv rv1">Et si Mission Nautilus<br>était en <span class="grad">Svelte ?</span></h2>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;max-width:1100px;width:100%;margin-top:28px;align-items:start">
+            <!-- LEFT: MAP + CONTEXT -->
+            <div class="rv rv2">
+                <!-- Mini map décorative -->
+                <div style="border-radius:18px;overflow:hidden;border:1px solid var(--border);background:linear-gradient(135deg,#0d2a3a,#0a1e2e);position:relative;height:260px">
+                    <!-- Grid -->
+                    <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:24px 24px"></div>
+                    <!-- ZRR zone -->
+                    <div style="position:absolute;top:12%;left:10%;width:80%;height:76%;border:2px dashed rgba(255,62,0,.3);border-radius:6px;background:rgba(255,62,0,.02)"></div>
+                    <!-- Markers animés -->
+                    <div style="position:absolute;width:14px;height:14px;border-radius:50%;background:var(--purple);border:2px solid #fff;top:42%;left:48%;box-shadow:0 0 12px var(--purple);animation:orbFloat 6s ease-in-out infinite"></div>
+                    <div style="position:absolute;width:10px;height:10px;border-radius:50%;background:#ff5252;border:2px solid #fff;top:28%;left:25%;animation:orbFloat 7s ease-in-out infinite 1s"></div>
+                    <div style="position:absolute;width:10px;height:10px;border-radius:50%;background:var(--green);border:2px solid #fff;top:65%;left:70%;animation:orbFloat 8s ease-in-out infinite 2s"></div>
+                    <div style="position:absolute;width:8px;height:8px;border-radius:50%;background:var(--orange);border:2px solid #fff;top:22%;left:60%;animation:orbFloat 5s ease-in-out infinite .5s;box-shadow:0 0 8px var(--orange)"></div>
+                    <div style="position:absolute;width:8px;height:8px;border-radius:50%;background:var(--orange);border:2px solid #fff;top:55%;left:35%;animation:orbFloat 6s ease-in-out infinite 1.5s;box-shadow:0 0 8px var(--orange)"></div>
+                    <div style="position:absolute;width:8px;height:8px;border-radius:50%;background:var(--orange);border:2px solid #fff;top:75%;left:78%;animation:orbFloat 7s ease-in-out infinite 3s;box-shadow:0 0 8px var(--orange)"></div>
+                    <!-- Légende -->
+                    <div style="position:absolute;bottom:10px;left:12px;display:flex;gap:12px;font-size:9px;color:var(--txt2)">
+                        <span><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--purple);margin-right:3px;vertical-align:middle"></span> Vous</span>
+                        <span><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#ff5252;margin-right:3px;vertical-align:middle"></span> Rival</span>
+                        <span><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--green);margin-right:3px;vertical-align:middle"></span> Explorateur</span>
+                        <span><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--orange);margin-right:3px;vertical-align:middle"></span> Objet</span>
+                    </div>
+                    <!-- Title overlay -->
+                    <div style="position:absolute;top:10px;left:12px;font-family:'Space Grotesk';font-size:13px;font-weight:700;color:var(--txt);opacity:.7">Mission Nautilus — Leaflet + Géolocalisation</div>
+                </div>
+                <!-- Tech stack actuel -->
+                <div style="margin-top:16px;padding:18px;border-radius:14px;background:var(--bg2);border:1px solid var(--border)">
+                    <div style="font-size:12px;font-weight:700;color:var(--txt2);margin-bottom:10px;text-transform:uppercase;letter-spacing:1px">Stack actuelle</div>
+                    <div style="display:flex;gap:8px;flex-wrap:wrap">
+                        <span style="padding:5px 12px;border-radius:8px;font-size:11px;font-weight:600;background:rgba(66,184,131,.1);border:1px solid rgba(66,184,131,.2);color:#42b883">Vue 3</span>
+                        <span style="padding:5px 12px;border-radius:8px;font-size:11px;font-weight:600;background:rgba(255,213,79,.1);border:1px solid rgba(255,213,79,.2);color:#ffd54f">Pinia</span>
+                        <span style="padding:5px 12px;border-radius:8px;font-size:11px;font-weight:600;background:rgba(79,195,247,.1);border:1px solid rgba(79,195,247,.2);color:var(--blue)">Vue Router</span>
+                        <span style="padding:5px 12px;border-radius:8px;font-size:11px;font-weight:600;background:rgba(105,240,174,.1);border:1px solid rgba(105,240,174,.2);color:var(--green)">Leaflet</span>
+                        <span style="padding:5px 12px;border-radius:8px;font-size:11px;font-weight:600;background:rgba(179,136,255,.1);border:1px solid rgba(179,136,255,.2);color:var(--purple)">Express</span>
+                        <span style="padding:5px 12px;border-radius:8px;font-size:11px;font-weight:600;background:rgba(255,128,171,.1);border:1px solid rgba(255,128,171,.2);color:var(--pink)">JWT</span>
+                    </div>
+                </div>
+            </div>
+            <!-- RIGHT: COMPARISON CARDS -->
+            <div class="rv rv3" style="display:flex;flex-direction:column;gap:12px">
+                <div style="padding:16px 20px;border-radius:14px;background:var(--bg2);border:1px solid var(--border);display:flex;align-items:center;gap:14px">
+                    <div style="width:36px;height:36px;border-radius:10px;background:rgba(255,213,79,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0"><i data-lucide="database" style="width:18px;height:18px;color:#ffd54f"></i></div>
+                    <div><div style="font-size:13px;font-weight:700">Pinia <span style="color:var(--txt2);font-weight:400">→</span> <span style="color:var(--orange)">Svelte Stores</span></div><div style="font-size:11px;color:var(--txt2);margin-top:2px">Plus de defineStore, plus de .value — un simple fichier JS</div></div>
+                </div>
+                <div style="padding:16px 20px;border-radius:14px;background:var(--bg2);border:1px solid var(--border);display:flex;align-items:center;gap:14px">
+                    <div style="width:36px;height:36px;border-radius:10px;background:rgba(79,195,247,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0"><i data-lucide="refresh-cw" style="width:18px;height:18px;color:var(--blue)"></i></div>
+                    <div><div style="font-size:13px;font-weight:700">ref() / computed() <span style="color:var(--txt2);font-weight:400">→</span> <span style="color:var(--orange)">$state / $derived</span></div><div style="font-size:11px;color:var(--txt2);margin-top:2px">Plus concis, pas de .value, réactivité au niveau du langage</div></div>
+                </div>
+                <div style="padding:16px 20px;border-radius:14px;background:var(--bg2);border:1px solid var(--border);display:flex;align-items:center;gap:14px">
+                    <div style="width:36px;height:36px;border-radius:10px;background:rgba(105,240,174,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0"><i data-lucide="folder-tree" style="width:18px;height:18px;color:var(--green)"></i></div>
+                    <div><div style="font-size:13px;font-weight:700">Vue Router <span style="color:var(--txt2);font-weight:400">→</span> <span style="color:var(--orange)">SvelteKit routing</span></div><div style="font-size:11px;color:var(--txt2);margin-top:2px">Routing fichiers automatique — plus de config manuelle</div></div>
+                </div>
+                <div style="padding:16px 20px;border-radius:14px;background:var(--bg2);border:1px solid var(--border);display:flex;align-items:center;gap:14px">
+                    <div style="width:36px;height:36px;border-radius:10px;background:rgba(179,136,255,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0"><i data-lucide="server" style="width:18px;height:18px;color:var(--purple)"></i></div>
+                    <div><div style="font-size:13px;font-weight:700">Express séparé <span style="color:var(--txt2);font-weight:400">→</span> <span style="color:var(--orange)">SvelteKit +server.js</span></div><div style="font-size:11px;color:var(--txt2);margin-top:2px">API dans le même projet — 3 repos → 1 seul</div></div>
+                </div>
+                <div style="padding:16px 20px;border-radius:14px;background:var(--bg2);border:1px solid var(--border);display:flex;align-items:center;gap:14px">
+                    <div style="width:36px;height:36px;border-radius:10px;background:rgba(255,62,0,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0"><i data-lucide="package" style="width:18px;height:18px;color:var(--orange)"></i></div>
+                    <div><div style="font-size:13px;font-weight:700">~16 KB runtime <span style="color:var(--txt2);font-weight:400">→</span> <span style="color:var(--orange)">0 KB</span></div><div style="font-size:11px;color:var(--txt2);margin-top:2px">Chargement plus rapide — critique pour un jeu mobile géolocalisé</div></div>
+                </div>
+                <!-- Bottom stats -->
+                <div style="display:flex;gap:12px;margin-top:4px">
+                    <div style="flex:1;padding:12px;border-radius:10px;background:rgba(255,62,0,.06);border:1px solid rgba(255,62,0,.15);text-align:center">
+                        <div style="font-family:'Space Grotesk';font-size:20px;font-weight:800;color:var(--orange)">-3 deps</div>
+                        <div style="font-size:10px;color:var(--txt2);margin-top:2px">Pinia, Vue Router, Express</div>
+                    </div>
+                    <div style="flex:1;padding:12px;border-radius:10px;background:rgba(105,240,174,.06);border:1px solid rgba(105,240,174,.15);text-align:center">
+                        <div style="font-family:'Space Grotesk';font-size:20px;font-weight:800;color:var(--green)">1 repo</div>
+                        <div style="font-size:10px;color:var(--txt2);margin-top:2px">au lieu de 3</div>
+                    </div>
+                    <div style="flex:1;padding:12px;border-radius:10px;background:rgba(79,195,247,.06);border:1px solid rgba(79,195,247,.15);text-align:center">
+                        <div style="font-family:'Space Grotesk';font-size:20px;font-weight:800;color:var(--blue)">~40%</div>
+                        <div style="font-size:10px;color:var(--txt2);margin-top:2px">moins de code</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 14. ADOPTION ==================== -->
     <section class="slide" id="companies">
         <div style="text-align:center;margin-bottom:8px">
             <div class="stag rv">Adoption</div>
@@ -3219,48 +3332,6 @@ count.<span class="fn">update</span>(n <span class="op">=&gt;</span> n + <span c
                 <div style="margin-bottom:14px"><i data-lucide="cloud" style="width:28px;height:28px;color:var(--purple)"></i></div>
                 <h3 style="font-size:16px;font-weight:700;margin-bottom:6px">Déploiement universel</h3>
                 <p style="font-size:13px;color:var(--txt2);line-height:1.6">Vercel, Netlify, Cloudflare, Node.js, static — adaptateurs pour tout.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== MIF13 — ET SI ON L'AVAIT FAIT EN SVELTE ? ==================== -->
-    <section class="slide" id="mif13">
-        <div style="text-align:center;margin-bottom:8px">
-            <div class="stag rv">Notre projet</div>
-            <h2 class="stitle rv rv1">Mission Nautilus en <span class="grad">Svelte ?</span></h2>
-            <p class="sdesc rv rv2" style="margin:0 auto">Notre projet MIF13 utilise Vue.js — voici ce que Svelte aurait changé.</p>
-        </div>
-        <table class="comp-table rv rv3">
-            <thead>
-                <tr>
-                    <th>Aspect</th>
-                    <th style="color:#42b883">Notre projet (Vue)</th>
-                    <th style="color:var(--orange)">Équivalent Svelte</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td>State management</td><td>Pinia (lib externe)</td><td class="comp-highlight">Svelte Stores (intégré)</td></tr>
-                <tr><td>Réactivité</td><td>ref() / computed() / .value</td><td class="comp-highlight">$state / $derived (pas de .value)</td></tr>
-                <tr><td>Routing</td><td>Vue Router (config manuelle)</td><td class="comp-highlight">SvelteKit routing fichiers</td></tr>
-                <tr><td>Build tool</td><td>Vite (config séparée)</td><td class="comp-highlight">Vite intégré dans SvelteKit</td></tr>
-                <tr><td>Runtime envoyé</td><td>~16 KB (Vue runtime)</td><td class="comp-highlight">0 KB</td></tr>
-                <tr><td>CSS</td><td>Scoped via attribut</td><td class="comp-highlight">Scopé natif (compilateur)</td></tr>
-                <tr><td>Animations (Leaflet)</td><td>Lib externe nécessaire</td><td class="comp-highlight">transition: / animate: natifs</td></tr>
-                <tr><td>API backend</td><td>Express séparé</td><td class="comp-highlight">SvelteKit +server.js (même projet)</td></tr>
-            </tbody>
-        </table>
-        <div class="rv rv4" style="margin-top:24px;display:flex;gap:20px;justify-content:center;flex-wrap:wrap">
-            <div style="padding:14px 22px;border-radius:12px;background:rgba(255,62,0,.08);border:1px solid rgba(255,62,0,.2);text-align:center">
-                <div style="font-family:'Space Grotesk';font-size:22px;font-weight:800;color:var(--orange)">-3</div>
-                <div style="font-size:11px;color:var(--txt2)">dépendances en moins</div>
-            </div>
-            <div style="padding:14px 22px;border-radius:12px;background:rgba(105,240,174,.08);border:1px solid rgba(105,240,174,.2);text-align:center">
-                <div style="font-family:'Space Grotesk';font-size:22px;font-weight:800;color:var(--green)">1 projet</div>
-                <div style="font-size:11px;color:var(--txt2)">au lieu de 3 (client + admin + api)</div>
-            </div>
-            <div style="padding:14px 22px;border-radius:12px;background:rgba(79,195,247,.08);border:1px solid rgba(79,195,247,.2);text-align:center">
-                <div style="font-family:'Space Grotesk';font-size:22px;font-weight:800;color:var(--blue)">~40%</div>
-                <div style="font-size:11px;color:var(--txt2)">de code en moins estimé</div>
             </div>
         </div>
     </section>
