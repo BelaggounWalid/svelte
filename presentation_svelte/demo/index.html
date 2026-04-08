@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo : Svelte vs React — Side by Side</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { background:#06060f; font-family:system-ui,sans-serif; color:#f0f0f5; }
+    .header {
+      text-align:center; padding:20px;
+      background:linear-gradient(135deg,rgba(255,62,0,.08),rgba(97,218,251,.08));
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+    .header h1 { font-size:22px; font-weight:800; }
+    .header h1 .vs { color:#a0a0c0; font-weight:400; margin:0 8px; }
+    .header h1 .svelte { color:#ff3e00; }
+    .header h1 .react { color:#61dafb; }
+    .header p { color:#a0a0c0; font-size:13px; margin-top:4px; }
+    .compare {
+      display:grid; grid-template-columns:1fr 1fr;
+      height:calc(100vh - 70px);
+    }
+    .compare iframe {
+      width:100%; height:100%; border:none;
+    }
+    .divider {
+      position:fixed; top:70px; left:50%; width:2px; bottom:0;
+      background:linear-gradient(to bottom,#ff3e00,#61dafb);
+      transform:translateX(-50%); z-index:10;
+    }
+    .label {
+      position:fixed; top:80px; padding:4px 12px; border-radius:0 0 8px 8px;
+      font-size:11px; font-weight:700; letter-spacing:1px; z-index:11;
+    }
+    .label.left { left:20px; background:rgba(255,62,0,.2); color:#ff3e00; }
+    .label.right { right:20px; background:rgba(97,218,251,.2); color:#61dafb; }
+    .diff-bar {
+      position:fixed; bottom:0; left:0; right:0;
+      display:flex; justify-content:center; gap:24px;
+      padding:10px 20px;
+      background:rgba(6,6,15,.95); backdrop-filter:blur(10px);
+      border-top:1px solid rgba(255,255,255,.08);
+      z-index:20;
+    }
+    .diff-item { text-align:center; }
+    .diff-label { font-size:10px; color:#a0a0c0; }
+    .diff-val { font-size:14px; font-weight:800; margin-top:2px; }
+    .diff-val.svelte { color:#ff3e00; }
+    .diff-val.react { color:#61dafb; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1><span class="svelte">Svelte</span><span class="vs">vs</span><span class="react">React</span></h1>
+    <p>Même application, deux approches — comparez en temps réel</p>
+  </div>
+
+  <div class="compare">
+    <iframe src="svelte-app.html"></iframe>
+    <iframe src="react-app.html"></iframe>
+  </div>
+
+  <div class="divider"></div>
+  <div class="label left">SVELTE 5</div>
+  <div class="label right">REACT 18</div>
+
+  <div class="diff-bar">
+    <div class="diff-item">
+      <div class="diff-label">Lignes de logique</div>
+      <div><span class="diff-val svelte">~50</span> vs <span class="diff-val react">~85</span></div>
+    </div>
+    <div class="diff-item">
+      <div class="diff-label">Hooks/APIs</div>
+      <div><span class="diff-val svelte">0</span> vs <span class="diff-val react">7</span></div>
+    </div>
+    <div class="diff-item">
+      <div class="diff-label">Runtime</div>
+      <div><span class="diff-val svelte">0 KB</span> vs <span class="diff-val react">42 KB</span></div>
+    </div>
+    <div class="diff-item">
+      <div class="diff-label">Immutabilité requise</div>
+      <div><span class="diff-val svelte">Non</span> vs <span class="diff-val react">Oui</span></div>
+    </div>
+    <div class="diff-item">
+      <div class="diff-label">Animations</div>
+      <div><span class="diff-val svelte">Natives</span> vs <span class="diff-val react">Manuelles</span></div>
+    </div>
+  </div>
+</body>
+</html>

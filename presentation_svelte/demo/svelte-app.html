@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mission Tracker — Svelte</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:system-ui,sans-serif; background:#0a0a1a; color:#f0f0f5; min-height:100vh; display:flex; flex-direction:column; align-items:center; padding:30px 20px; }
+    .badge { display:inline-block; padding:4px 14px; border-radius:20px; font-size:11px; font-weight:700; background:rgba(255,62,0,.15); color:#ff3e00; margin-bottom:16px; letter-spacing:1px; }
+    h1 { font-size:28px; font-weight:800; margin-bottom:6px; }
+    h1 span { color:#ff3e00; }
+    .subtitle { color:#a0a0c0; font-size:14px; margin-bottom:24px; }
+    .app { width:100%; max-width:480px; }
+    .stats { display:flex; gap:12px; margin-bottom:20px; }
+    .stat { flex:1; padding:14px; border-radius:12px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); text-align:center; }
+    .stat-num { font-size:24px; font-weight:800; color:#ff3e00; }
+    .stat-lbl { font-size:10px; color:#a0a0c0; margin-top:2px; }
+    .filters { display:flex; gap:6px; margin-bottom:16px; }
+    .filter-btn { padding:6px 14px; border-radius:8px; border:1px solid rgba(255,255,255,.1); background:transparent; color:#a0a0c0; font-size:12px; font-weight:600; cursor:pointer; transition:all .2s; }
+    .filter-btn.active { border-color:#ff3e00; color:#ff3e00; background:rgba(255,62,0,.1); }
+    .input-row { display:flex; gap:8px; margin-bottom:16px; }
+    .input-row input { flex:1; padding:10px 14px; border-radius:10px; border:1px solid rgba(255,255,255,.1); background:rgba(255,255,255,.04); color:#f0f0f5; font-size:13px; outline:none; }
+    .input-row input:focus { border-color:#ff3e00; }
+    .input-row select { padding:10px; border-radius:10px; border:1px solid rgba(255,255,255,.1); background:rgba(255,255,255,.04); color:#f0f0f5; font-size:13px; outline:none; }
+    .add-btn { padding:10px 18px; border-radius:10px; border:none; background:linear-gradient(135deg,#ff3e00,#ff6b35); color:#fff; font-weight:700; cursor:pointer; font-size:13px; }
+    .list { list-style:none; }
+    .player { display:flex; align-items:center; gap:10px; padding:12px 14px; border-radius:10px; background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.05); margin-bottom:8px; transition:all .3s; animation: slideIn 0.3s ease-out; }
+    .player:hover { background:rgba(255,255,255,.06); }
+    .player.removing { animation: slideOut 0.3s ease-in forwards; }
+    .dot { width:10px; height:10px; border-radius:50%; flex-shrink:0; }
+    .dot.rival { background:#ff5252; }
+    .dot.explorateur { background:#69f0ae; }
+    .dot.objet { background:#ff9800; }
+    .name { flex:1; font-size:14px; font-weight:600; }
+    .role-tag { font-size:10px; padding:2px 8px; border-radius:6px; font-weight:600; }
+    .role-tag.rival { background:rgba(255,82,82,.15); color:#ff5252; }
+    .role-tag.explorateur { background:rgba(105,240,174,.15); color:#69f0ae; }
+    .role-tag.objet { background:rgba(255,152,0,.15); color:#ff9800; }
+    .ttl { font-family:monospace; font-size:12px; color:#a0a0c0; }
+    .ttl.urgent { color:#ff5252; animation: pulse 1s infinite; }
+    .del-btn { width:28px; height:28px; border-radius:6px; border:none; background:transparent; color:#a0a0c0; font-size:14px; cursor:pointer; display:flex; align-items:center; justify-content:center; }
+    .del-btn:hover { background:rgba(255,82,82,.15); color:#ff5252; }
+    .footer { margin-top:16px; padding-top:12px; border-top:1px solid rgba(255,255,255,.08); font-size:11px; color:#a0a0c0; display:flex; justify-content:space-between; }
+    .line-count { margin-top:20px; padding:10px 16px; border-radius:10px; background:rgba(255,62,0,.08); border:1px solid rgba(255,62,0,.2); text-align:center; font-size:12px; color:#ff3e00; }
+    @keyframes slideIn { from { opacity:0; transform:translateX(-20px); } to { opacity:1; transform:translateX(0); } }
+    @keyframes slideOut { to { opacity:0; transform:translateX(20px); height:0; padding:0; margin:0; overflow:hidden; } }
+    @keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:.4; } }
+  </style>
+</head>
+<body>
+  <div class="badge">SVELTE 5 (compiled)</div>
+  <h1>Mission <span>Tracker</span></h1>
+  <p class="subtitle">Suivi des ressources en temps réel</p>
+  <div id="app" class="app"></div>
+
+  <script>
+    // ══════════════════════════════════════════════
+    // Svelte compilé : ~50 lignes de logique
+    // Ce code simule exactement ce que le compilateur
+    // Svelte génère — du JS vanilla, pas de runtime
+    // ══════════════════════════════════════════════
+
+    // State — équivalent de $state()
+    let resources = [
+      { id: 1, name: "Alice", role: "rival", ttl: null, score: 3 },
+      { id: 2, name: "Bob", role: "explorateur", ttl: null, score: 1 },
+      { id: 3, name: "Coffre", role: "objet", ttl: 45, score: null },
+      { id: 4, name: "Potion", role: "objet", ttl: 20, score: null },
+    ];
+    let filter = "all";
+    let newName = "";
+    let newRole = "rival";
+    let nextId = 5;
+
+    // Derived — équivalent de $derived()
+    // Pas de useMemo, pas de dépendances — recalculé à chaque render
+    function getPlayers() { return resources.filter(r => r.role !== "objet"); }
+    function getObjects() { return resources.filter(r => r.role === "objet"); }
+    function getFiltered() { return filter === "all" ? resources : resources.filter(r => r.role === filter); }
+    function getAvgTTL() {
+      const withTTL = getObjects().filter(o => o.ttl > 0);
+      return withTTL.length ? Math.round(withTTL.reduce((s, o) => s + o.ttl, 0) / withTTL.length) : 0;
+    }
+
+    // Actions
+    function addResource() {
+      if (!newName.trim()) return;
+      resources.push({
+        id: nextId++, name: newName, role: newRole,
+        ttl: newRole === "objet" ? 60 : null,
+        score: newRole !== "objet" ? 0 : null,
+      });
+      newName = "";
+      render();
+    }
+
+    function removeResource(id) {
+      const el = document.querySelector(`[data-id="${id}"]`);
+      if (el) {
+        el.classList.add("removing");
+        setTimeout(() => { resources = resources.filter(r => r.id !== id); render(); }, 280);
+      }
+    }
+
+    // TTL countdown — update CHIRURGICAL (comme le vrai compilateur Svelte)
+    // On ne touche que les noeuds TTL + stats, pas tout le DOM
+    setInterval(() => {
+      let changed = false;
+      resources.forEach(r => {
+        if (r.role === "objet" && r.ttl > 0) { r.ttl--; changed = true; }
+      });
+      if (!changed) return;
+      // Update uniquement les spans TTL
+      document.querySelectorAll("[data-ttl-id]").forEach(el => {
+        const r = resources.find(x => x.id === +el.dataset.ttlId);
+        if (r && r.ttl !== null) {
+          el.textContent = r.ttl + "s";
+          el.className = "ttl" + (r.ttl < 10 ? " urgent" : "");
+        }
+      });
+      // Update stats
+      updateStats();
+    }, 1000);
+
+    function updateStats() {
+      const p = document.getElementById("s-players");
+      const o = document.getElementById("s-objects");
+      const t = document.getElementById("s-ttl");
+      if (p) p.textContent = getPlayers().length;
+      if (o) o.textContent = getObjects().length;
+      if (t) t.textContent = getAvgTTL() + "s";
+    }
+
+    // ── Render (ce que le compilateur Svelte génère) ──
+    // Reconstruit le DOM seulement quand la structure change (ajout/suppression/filtre)
+    function render() {
+      const app = document.getElementById("app");
+      const filtered = getFiltered();
+
+      app.innerHTML = `
+        <div class="stats">
+          <div class="stat"><div class="stat-num" id="s-players">${getPlayers().length}</div><div class="stat-lbl">Joueurs</div></div>
+          <div class="stat"><div class="stat-num" id="s-objects">${getObjects().length}</div><div class="stat-lbl">Objets</div></div>
+          <div class="stat"><div class="stat-num" id="s-ttl">${getAvgTTL()}s</div><div class="stat-lbl">TTL moyen</div></div>
+        </div>
+        <div class="filters">
+          ${["all","rival","explorateur","objet"].map(f =>
+            `<button class="filter-btn ${filter===f?"active":""}" onclick="setFilter('${f}')">${f==="all"?"Tous":f}</button>`
+          ).join("")}
+        </div>
+        <div class="input-row">
+          <input id="nameInput" value="${newName}" placeholder="Nom..." oninput="newName=this.value" onkeydown="if(event.key==='Enter')addResource()"/>
+          <select onchange="newRole=this.value">
+            <option value="rival" ${newRole==="rival"?"selected":""}>Rival</option>
+            <option value="explorateur" ${newRole==="explorateur"?"selected":""}>Explorateur</option>
+            <option value="objet" ${newRole==="objet"?"selected":""}>Objet</option>
+          </select>
+          <button class="add-btn" onclick="addResource()">+</button>
+        </div>
+        <ul class="list">
+          ${filtered.map(r => `
+            <li class="player" data-id="${r.id}">
+              <span class="dot ${r.role}"></span>
+              <span class="name">${r.name}</span>
+              <span class="role-tag ${r.role}">${r.role}</span>
+              ${r.ttl !== null ? `<span class="ttl${r.ttl<10?" urgent":""}" data-ttl-id="${r.id}">${r.ttl}s</span>` : ""}
+              ${r.score !== null ? `<span class="ttl">Score: ${r.score}</span>` : ""}
+              <button class="del-btn" onclick="removeResource(${r.id})">x</button>
+            </li>
+          `).join("")}
+        </ul>
+        <div class="footer">
+          <span>${filtered.length} ressource${filtered.length!==1?"s":""}</span>
+          <span>${resources.length} total</span>
+        </div>
+        <div class="line-count">
+          Svelte : ~50 lignes de logique | 0 hooks | 0 dépendances | 0 KB runtime
+        </div>
+      `;
+    }
+
+    function setFilter(f) { filter = f; render(); }
+
+    // Initial render
+    render();
+  </script>
+</body>
+</html>
