@@ -2442,6 +2442,77 @@
                 <div style="font-size:11px;color:var(--txt2);margin-top:4px">Pas de VDOM en mémoire</div>
             </div>
         </div>
+
+    </section>
+
+    <!-- ==================== 5b. SVELTE & COURS PERF WEB ==================== -->
+    <section class="slide" id="perf-cours">
+        <div style="text-align:center;margin-bottom:24px">
+            <div class="stag rv" style="background:rgba(255,62,0,.12);color:var(--orange)">Lien avec le cours</div>
+            <h2 class="stitle rv rv1">Svelte & la <span class="grad">Performance Web</span></h2>
+            <p class="sdesc rv rv2" style="margin:0 auto">Ton cours explique <em>pourquoi</em> le JS lourd est un problème. Svelte est une réponse architecturale à ce problème.</p>
+        </div>
+
+        <div class="rv rv3" style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+
+            <!-- CRP -->
+            <div style="padding:20px;border-radius:14px;background:var(--bg2);border:1px solid var(--border)">
+                <div style="font-size:13px;font-weight:700;color:var(--orange);margin-bottom:10px;display:flex;align-items:center;gap:8px">
+                    <i data-lucide="git-branch" style="width:16px;height:16px"></i> CRP — Script bloquant
+                </div>
+                <div style="font-size:12px;color:var(--txt2);line-height:1.8">
+                    Le navigateur bloque le DOM à chaque <code style="background:rgba(255,255,255,.06);padding:1px 6px;border-radius:4px">&lt;script&gt;</code>.<br>
+                    <span style="color:#61dafb;font-weight:600">Angular</span> → 65 KB → ~300ms de blocage<br>
+                    <span style="color:var(--orange);font-weight:600">Svelte</span> → 2 KB → ~10ms de blocage<br>
+                    <span style="color:var(--txt);font-style:italic;font-size:11px">30× moins de blocage CRP.</span>
+                </div>
+            </div>
+
+            <!-- Look-ahead parser -->
+            <div style="padding:20px;border-radius:14px;background:var(--bg2);border:1px solid var(--border)">
+                <div style="font-size:13px;font-weight:700;color:var(--blue);margin-bottom:10px;display:flex;align-items:center;gap:8px">
+                    <i data-lucide="search" style="width:16px;height:16px"></i> Look-ahead parser
+                </div>
+                <div style="font-size:12px;color:var(--txt2);line-height:1.8">
+                    Le navigateur anticipe les ressources critiques à télécharger.<br>
+                    Il priorise les <code style="background:rgba(255,255,255,.06);padding:1px 6px;border-radius:4px">&lt;script&gt;</code> — plus ils sont légers, plus vite ils passent.<br>
+                    <span style="color:var(--orange);font-weight:600">Svelte</span> tire pleinement parti de cette optimisation.
+                </div>
+            </div>
+
+            <!-- Layout / Paint -->
+            <div style="padding:20px;border-radius:14px;background:var(--bg2);border:1px solid var(--border)">
+                <div style="font-size:13px;font-weight:700;color:var(--purple);margin-bottom:10px;display:flex;align-items:center;gap:8px">
+                    <i data-lucide="layers" style="width:16px;height:16px"></i> Layout & Paint pipeline
+                </div>
+                <div style="font-size:12px;color:var(--txt2);line-height:1.8">
+                    JS → Style → <strong style="color:var(--txt)">Layout</strong> → Paint → Composite<br>
+                    Chaque modif DOM peut déclencher un reflow complet.<br>
+                    <span style="color:#61dafb;font-weight:600">React VDOM</span> → patches multiples → reflows inutiles<br>
+                    <span style="color:var(--orange);font-weight:600">Svelte</span> → update chirurgicale → moins de reflows → meilleur FPS
+                </div>
+            </div>
+
+            <!-- RAIL -->
+            <div style="padding:20px;border-radius:14px;background:var(--bg2);border:1px solid var(--border)">
+                <div style="font-size:13px;font-weight:700;color:#4caf50;margin-bottom:10px;display:flex;align-items:center;gap:8px">
+                    <i data-lucide="gauge" style="width:16px;height:16px"></i> Modèle RAIL (Google)
+                </div>
+                <div style="font-size:12px;color:var(--txt2);line-height:1.8">
+                    <span style="color:var(--txt);font-weight:600">Load</span> &lt;5s — moins de KB → plus facile à tenir<br>
+                    <span style="color:var(--txt);font-weight:600">Response</span> &lt;50ms — pas de VDOM → interactions plus rapides<br>
+                    <span style="color:var(--txt);font-weight:600">Animation</span> 10ms/frame — moins de JS → plus de CPU libre<br>
+                    <span style="color:#4caf50;font-style:italic;font-size:11px">Svelte s'aligne naturellement sur RAIL.</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="rv rv4" style="margin-top:20px;padding:14px 24px;border-radius:12px;background:rgba(255,62,0,.07);border:1px solid rgba(255,62,0,.2);text-align:center;font-size:13px;color:var(--txt2)">
+            <i data-lucide="lightbulb" style="width:15px;height:15px;color:var(--orange);vertical-align:middle"></i>
+            &nbsp;<em>"40% des utilisateurs quittent un site qui met plus de 3 secondes à charger."</em>
+            La différence Angular→Svelte (~290ms sur mobile) peut faire basculer ce seuil.
+        </div>
     </section>
 
     <!-- ==================== 6. CODE & REACTIVITE ==================== -->
